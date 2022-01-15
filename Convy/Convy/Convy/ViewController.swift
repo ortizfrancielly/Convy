@@ -31,9 +31,9 @@ class ViewController: UIViewController {
     lazy var categoriaTitle: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .title1)
+        label.font = .preferredFont(forTextStyle: .largeTitle)
         label.adjustsFontForContentSizeCategory = true
-        label.text = "Texto para testar scrollview"
+        label.text = "Categorias"
         return label
     }()
     
@@ -47,8 +47,8 @@ class ViewController: UIViewController {
     
     private lazy var constraints: [NSLayoutConstraint] = {
         [
-            categoriaTitle.centerXAnchor.constraint(equalTo: self.containerView.centerXAnchor),
-            categoriaTitle.centerYAnchor.constraint(equalTo: self.containerView.centerYAnchor)
+            categoriaTitle.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 32),
+            categoriaTitle.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 12)
         ]}()
 
     override func viewDidLoad() {
