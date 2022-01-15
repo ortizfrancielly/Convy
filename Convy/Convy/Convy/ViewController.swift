@@ -8,6 +8,14 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    
+    private lazy var infoButton: UIBarButtonItem = {
+        var exitButton = UIBarButtonItem()
+        exitButton = UIBarButtonItem(title: "Informação", style: UIBarButtonItem.Style.plain, target: self, action: #selector(infoTap(_:)))
+        exitButton.tintColor = .blue
+        return exitButton
+    }()
+    
     lazy var contentViewSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 400)
     
     lazy var ScrollView: UIScrollView = {
@@ -45,6 +53,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        navigationItem.rightBarButtonItem = infoButton
         
         view.addSubview(ScrollView)
         ScrollView.addSubview(containerView)
@@ -55,7 +67,10 @@ class ViewController: UIViewController {
     internal override func viewDidLayoutSubviews() {
         NSLayoutConstraint.activate(constraints)
     }
-
+    
+    @objc private func infoTap (_ sender: UIButton) {
+        print ("oi")
+    }
 
 }
 
