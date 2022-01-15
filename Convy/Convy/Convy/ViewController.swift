@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     private lazy var infoButton: UIBarButtonItem = {
         var exitButton = UIBarButtonItem()
-        exitButton = UIBarButtonItem(title: "Informação", style: UIBarButtonItem.Style.plain, target: self, action: #selector(infoTap(_:)))
+        exitButton = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(infoTap(_:)))
         exitButton.tintColor = .blue
         return exitButton
     }()
