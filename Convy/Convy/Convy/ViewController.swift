@@ -8,14 +8,16 @@ import UIKit
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    var cellId = "cell"
+    
     var categories = ["Temperatura", "Massa", "Dados", "Comprimento"]
     
-    var collectionCategories: UICollectionView = {
+    lazy var collectionCategories: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
-        collection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collection.register(cellCategories.self, forCellWithReuseIdentifier: cellId)
         collection.backgroundColor = .blue
         return collection
     }()
@@ -113,9 +115,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) //as! cellCategories
-        cell.contentView.backgroundColor = .systemRed
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! cellCategories
         return cell
     }
 
