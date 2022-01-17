@@ -31,7 +31,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     lazy var ScrollView: UIScrollView = {
         let view = UIScrollView(frame: .zero)
-        //scrollView.translatesAutoresizingMaskIntoConstraints = false
+        //view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
         view.contentSize = contentViewSize
         view.frame = self.view.bounds
@@ -65,26 +65,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     private lazy var constraints: [NSLayoutConstraint] = {
         [
             
-            containerView.topAnchor.constraint(equalTo: view.topAnchor),
-            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            containerView.topAnchor.constraint(equalTo: containerView.topAnchor),
+            containerView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             
             
             categoriaTitle.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 100),
             categoriaTitle.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 12),
             
-//            ScrollView.topAnchor.constraint(equalTo: view.topAnchor),
-//            ScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            ScrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            ScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             
             collectionCategories.topAnchor.constraint(equalTo: categoriaTitle.bottomAnchor, constant: 40),
             collectionCategories.heightAnchor.constraint(equalToConstant: 100),
             collectionCategories.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             collectionCategories.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
             
-//            containerCollectionView.topAnchor.constraint(equalTo: categoriaTitle.topAnchor),
-//            containerCollectionView.heightAnchor.constraint(equalToConstant: 300),
-//            containerCollectionView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 15),
-//            containerCollectionView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15),
-//            containerCollectionView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
         ]}()
 
     override func viewDidLoad() {
@@ -97,8 +92,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         collectionCategories.dataSource = self
         collectionCategories.delegate = self
         
-        view.addSubview(containerView)
-        //ScrollView.addSubview(containerView)
+        view.addSubview(ScrollView)
+        ScrollView.addSubview(containerView)
         containerView.addSubview(categoriaTitle)
         containerView.addSubview(collectionCategories)
         collectionCategories.frame = view.bounds
@@ -123,15 +118,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         return cell
     }
-    
-   
-    
 
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_collectionView: UICollectionView, layout UICollectionViewLayout: UICollectionViewLayout, sizeForItemA indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 20)
-    }
-}
 
