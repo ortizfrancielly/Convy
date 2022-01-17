@@ -18,10 +18,19 @@ class cellCategories: UICollectionViewCell {
         return image
     }()
     
+    var labelName: UILabel = {
+        var label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .preferredFont(forTextStyle: .title1)
+        label.backgroundColor = .white
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         imageCell.layer.cornerRadius = (self.frame.height/3.5)
         self.addSubview(imageCell)
+        self.addSubview(labelName)
         addConstraints()
     }
     
@@ -35,6 +44,9 @@ class cellCategories: UICollectionViewCell {
         imageCell.heightAnchor.constraint(equalToConstant: 65).isActive = true
         imageCell.widthAnchor.constraint(equalToConstant: 65).isActive = true
         imageCell.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
+        
+        labelName.bottomAnchor.constraint(equalTo: imageCell.topAnchor, constant: 10).isActive = true
+        labelName.leadingAnchor.constraint(equalTo: imageCell.leadingAnchor, constant: 20).isActive = true
     }
     
     

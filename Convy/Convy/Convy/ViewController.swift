@@ -10,7 +10,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var cellId = "cell"
     
-    var categories = ["Temperatura", "Massa", "Dados", "Comprimento"]
+    var categories = ["Temperatura", "Massa", "Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento"]
     
     lazy var collectionCategories: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -111,11 +111,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! cellCategories
+        let iconCategories = categories[indexPath.row]
+        cell.labelName.text = categories[indexPath.row]
+        cell.imageCell.image = UIImage(named: iconCategories)
         return cell
     }
 
