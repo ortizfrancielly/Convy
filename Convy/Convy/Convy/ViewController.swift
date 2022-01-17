@@ -6,8 +6,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    var categories = ["Temperatura", "Massa", "Dados", "Comprimento"]
+    
+    var collectionCategories: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collection.translatesAutoresizingMaskIntoConstraints = false
+        collection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collection.backgroundColor = .blue
+        return collection
+    }()
     
     private lazy var infoButton: UIBarButtonItem = {
         var exitButton = UIBarButtonItem()
@@ -24,7 +35,6 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         view.contentSize = contentViewSize
         view.frame = self.view.bounds
-        //scrollView.isHidden = true
         return view
     }()
     
@@ -32,6 +42,7 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .largeTitle)
+        label.backgroundColor = .white
         label.adjustsFontForContentSizeCategory = true
         label.text = "Categorias"
         return label
@@ -39,16 +50,41 @@ class ViewController: UIViewController {
     
     lazy var containerView: UIView = {
         let view = UIView()
+        view.backgroundColor = .green
         view.frame.size = contentViewSize
+        //view.backgroundColor = .white
+        return view
+    }()
+    
+    lazy var containerCollectionView: UIView = {
+        let view = UIView()
         view.backgroundColor = .white
         return view
     }()
     
-    
     private lazy var constraints: [NSLayoutConstraint] = {
         [
-            categoriaTitle.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 32),
-            categoriaTitle.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 12)
+            
+            containerView.topAnchor.constraint(equalTo: view.topAnchor),
+            containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            
+            
+            categoriaTitle.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 100),
+            categoriaTitle.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 12),
+            
+//            ScrollView.topAnchor.constraint(equalTo: view.topAnchor),
+//            ScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            
+            collectionCategories.topAnchor.constraint(equalTo: categoriaTitle.bottomAnchor, constant: 40),
+            collectionCategories.heightAnchor.constraint(equalToConstant: 100),
+            collectionCategories.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
+            collectionCategories.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+            
+//            containerCollectionView.topAnchor.constraint(equalTo: categoriaTitle.topAnchor),
+//            containerCollectionView.heightAnchor.constraint(equalToConstant: 300),
+//            containerCollectionView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 15),
+//            containerCollectionView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -15),
+//            containerCollectionView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
         ]}()
 
     override func viewDidLoad() {
@@ -58,9 +94,14 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         navigationItem.rightBarButtonItem = infoButton
         
-        view.addSubview(ScrollView)
-        ScrollView.addSubview(containerView)
+        collectionCategories.dataSource = self
+        collectionCategories.delegate = self
+        
+        view.addSubview(containerView)
+        //ScrollView.addSubview(containerView)
         containerView.addSubview(categoriaTitle)
+        containerView.addSubview(collectionCategories)
+        collectionCategories.frame = view.bounds
         // Do any additional setup after loading the view.
     }
     
@@ -71,6 +112,26 @@ class ViewController: UIViewController {
     @objc private func infoTap (_ sender: UIButton) {
         print ("oi")
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 30
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) //as! cellCategories
+        cell.contentView.backgroundColor = .systemRed
+        
+        return cell
+    }
+    
+   
+    
 
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_collectionView: UICollectionView, layout UICollectionViewLayout: UICollectionViewLayout, sizeForItemA indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 200, height: 20)
+    }
 }
 
