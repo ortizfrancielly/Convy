@@ -41,11 +41,11 @@ class cellCategories: UICollectionViewCell {
         
         imageCell.translatesAutoresizingMaskIntoConstraints = false
 //        imageCell.topAnchor.constraint(equalTo: self.topAnchor, constant: self.frame.height/5).isActive = true
-        imageCell.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        imageCell.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        imageCell.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        imageCell.widthAnchor.constraint(equalToConstant: 80).isActive = true
 //        imageCell.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         imageCell.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        imageCell.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10).isActive = true
+        imageCell.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -5).isActive = true
         
         labelName.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         labelName.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true

@@ -18,7 +18,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.register(cellCategories.self, forCellWithReuseIdentifier: cellId)
-        layout.itemSize = CGSize(width: 100, height: 120)
+        layout.itemSize = CGSize(width: 100, height: 105)
         return collection
     }()
     
@@ -77,7 +77,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             ScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             
             collectionCategories.topAnchor.constraint(equalTo: categoriaTitle.bottomAnchor, constant: 32),
-            collectionCategories.heightAnchor.constraint(equalToConstant: 130),
+            collectionCategories.heightAnchor.constraint(equalToConstant: 110),
             collectionCategories.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             collectionCategories.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
             
