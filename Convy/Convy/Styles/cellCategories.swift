@@ -12,7 +12,6 @@ class cellCategories: UICollectionViewCell {
     
     var imageCell: UIImageView = {
         let image = UIImageView()
-        image.backgroundColor = .red
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
         return image
@@ -21,14 +20,14 @@ class cellCategories: UICollectionViewCell {
     var labelName: UILabel = {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .preferredFont(forTextStyle: .title1)
-        label.backgroundColor = .white
+        label.font = .preferredFont(forTextStyle: .subheadline)
         return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        imageCell.layer.cornerRadius = (self.frame.height/3.5)
+        self.frame = CGRect(x: 60, y: 60, width: 60, height: 60)
+        //imageCell.layer.cornerRadius = (self.frame.height/3.5)
         self.addSubview(imageCell)
         self.addSubview(labelName)
         addConstraints()
@@ -39,14 +38,18 @@ class cellCategories: UICollectionViewCell {
     }
     
     func addConstraints(){
-        imageCell.translatesAutoresizingMaskIntoConstraints = false
-        imageCell.topAnchor.constraint(equalTo: self.topAnchor, constant: self.frame.height/5).isActive = true
-        imageCell.heightAnchor.constraint(equalToConstant: 65).isActive = true
-        imageCell.widthAnchor.constraint(equalToConstant: 65).isActive = true
-        imageCell.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20).isActive = true
         
-        labelName.bottomAnchor.constraint(equalTo: imageCell.topAnchor, constant: 10).isActive = true
-        labelName.leadingAnchor.constraint(equalTo: imageCell.leadingAnchor, constant: 20).isActive = true
+        imageCell.translatesAutoresizingMaskIntoConstraints = false
+//        imageCell.topAnchor.constraint(equalTo: self.topAnchor, constant: self.frame.height/5).isActive = true
+        imageCell.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        imageCell.widthAnchor.constraint(equalToConstant: 100).isActive = true
+//        imageCell.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        imageCell.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        imageCell.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -10).isActive = true
+        
+        labelName.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        labelName.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+
     }
     
     

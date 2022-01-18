@@ -10,7 +10,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     var cellId = "cell"
     
-    var categories = ["Temperatura", "Massa", "Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento"]
+    var categories = ["Massa", "Temperatura", "Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento"]
     
     lazy var collectionCategories: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -18,7 +18,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.register(cellCategories.self, forCellWithReuseIdentifier: cellId)
-        collection.backgroundColor = .blue
+        layout.itemSize = CGSize(width: 100, height: 120)
         return collection
     }()
     
@@ -52,7 +52,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
     lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .green
         view.frame.size = contentViewSize
         //view.backgroundColor = .white
         return view
@@ -71,18 +70,22 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             containerView.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             
             
-            categoriaTitle.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 100),
+            categoriaTitle.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 32),
             categoriaTitle.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 12),
             
             ScrollView.topAnchor.constraint(equalTo: view.topAnchor),
             ScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             
-            collectionCategories.topAnchor.constraint(equalTo: categoriaTitle.bottomAnchor, constant: 40),
-            collectionCategories.heightAnchor.constraint(equalToConstant: 100),
+            collectionCategories.topAnchor.constraint(equalTo: categoriaTitle.bottomAnchor, constant: 32),
+            collectionCategories.heightAnchor.constraint(equalToConstant: 130),
             collectionCategories.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
             collectionCategories.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
             
         ]}()
+    
+//    private lazy var testConstraint (UICollectionViewCell) {
+//
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,6 +122,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let iconCategories = categories[indexPath.row]
         cell.labelName.text = categories[indexPath.row]
         cell.imageCell.image = UIImage(named: iconCategories)
+        if indexPath.row == 0 {
+            print("oi")
+        }
+        else {
+            print("tchau")
+        }
         return cell
     }
 
