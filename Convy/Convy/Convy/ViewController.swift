@@ -44,9 +44,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .preferredFont(forTextStyle: .largeTitle)
-        label.backgroundColor = .white
         label.adjustsFontForContentSizeCategory = true
         label.text = "Categorias"
+        return label
+    }()
+    
+    lazy var conversorTitle: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .preferredFont(forTextStyle: .largeTitle)
+        label.adjustsFontForContentSizeCategory = true
+        label.text = "Conversão"
         return label
     }()
     
@@ -57,9 +65,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return view
     }()
     
-    lazy var containerCollectionView: UIView = {
+    lazy var containerConversor: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 7
+        view.layer.shadowColor = .init(gray: 2, alpha: 4)
+        view.layer.shadowOpacity = 1
+        view.layer.shadowOffset = CGSize(width: 0, height: 3)
+        view.layer.shadowRadius = 1
+        view.backgroundColor = .blue
         return view
     }()
     
@@ -79,13 +93,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             collectionCategories.topAnchor.constraint(equalTo: categoriaTitle.bottomAnchor, constant: 32),
             collectionCategories.heightAnchor.constraint(equalToConstant: 110),
             collectionCategories.leadingAnchor.constraint(equalTo: containerView.leadingAnchor),
-            collectionCategories.trailingAnchor.constraint(equalTo: containerView.trailingAnchor)
+            collectionCategories.trailingAnchor.constraint(equalTo: containerView.trailingAnchor),
+            
+            conversorTitle.topAnchor.constraint(equalTo: collectionCategories.bottomAnchor, constant: 32),
+            conversorTitle.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 12),
+            
+            containerConversor.topAnchor.constraint(equalTo: conversorTitle.bottomAnchor, constant: 32),
+            containerConversor.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
+            containerConversor.heightAnchor.constraint(equalToConstant: 400),
+            containerConversor.widthAnchor.constraint(equalToConstant: 380)
+
             
         ]}()
     
-//    private lazy var testConstraint (UICollectionViewCell) {
-//
-//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,6 +121,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         ScrollView.addSubview(containerView)
         containerView.addSubview(categoriaTitle)
         containerView.addSubview(collectionCategories)
+        containerView.addSubview(conversorTitle)
+        containerView.addSubview(containerConversor)
         collectionCategories.frame = view.bounds
         // Do any additional setup after loading the view.
     }
