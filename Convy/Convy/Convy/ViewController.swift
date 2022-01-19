@@ -6,6 +6,9 @@
 
 import UIKit
 
+
+
+
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
         var cellId = "cell"
@@ -152,7 +155,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         @objc func buttonClicked(_ sender: UIButton) {
             if (sender.tag == 0){
-                print("clicou aqui")
+                print(Comprimento.metro.unidadeMedida.nome)
                 containerConversor.backgroundColor = .yellow
             }
             
@@ -162,4 +165,61 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 
     }
 
+}
+
+protocol ConversionViewModel {
+    var valor: Double {get set}
+    var unidadeMedida: [UnidadeMedida] {get}
+    var baseInicial: UnidadeMedida {get set}
+    var baseFinal: UnidadeMedida {get set}
+    
+    func calcular() -> Double
+}
+
+enum Comprimento: CaseIterable {
+    case centimetro
+    case metro
+    case quilometro
+    
+    var unidadeMedida: UnidadeMedida {
+        switch self {
+        case .centimetro:
+            return UnidadeMedida(nome: "Centímetro", base: 0.01)
+        case .metro:
+            return UnidadeMedida(nome: "Metro", base: 1)
+        case .quilometro:
+           return UnidadeMedida(nome: "Quilômetro", base: 1000)
+        }
+    }
+}
+
+struct UnidadeMedida {
+    var nome: String
+    var base: Double
+}
+
+class ComprimentoViewModel: ConversionViewModel {
+    
+    var valor: Double
+    
+    let unidadeMedida: [UnidadeMedida]
+    
+    var baseInicial: UnidadeMedida
+    
+    var baseFinal: UnidadeMedida
+    
+    func calcular() -> Double {
+        let taxaConversao = baseInicial.base / baseFinal.base
+        return valor * taxaConversao
+    }
+    
+    
+    init(){
+        valor = 0
+        unidadeMedida = Comprimento.allCases.map {$0.unidadeMedida}
+        baseInicial = Comprimento.metro.unidadeMedida
+        baseFinal = Comprimento.quilometro.unidadeMedida
+    }
+    
+    
 }
