@@ -9,11 +9,21 @@ import UIKit
 
 
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
     
         var cellId = "cell"
         
         var categories = ["Massa", "Temperatura", "Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento"]
+        
+        lazy var unityTextField: UITextField = {
+            var textField = UITextField(frame: .zero)
+            textField.translatesAutoresizingMaskIntoConstraints = false
+            textField.keyboardType = UIKeyboardType.default
+            textField.backgroundColor = .yellow
+            textField.clearButtonMode = .whileEditing
+            textField.font = .systemFont(ofSize: 15)
+            return textField
+        }()
         
         lazy var collectionCategories: UICollectionView = {
             let layout = UICollectionViewFlowLayout()
@@ -80,11 +90,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         lazy var containerConversor: UIView = {
             let view = UIView()
             view.translatesAutoresizingMaskIntoConstraints = false
-            view.layer.cornerRadius = 7
-            view.layer.shadowColor = .init(gray: 2, alpha: 4)
-            view.layer.shadowOpacity = 1
-            view.layer.shadowOffset = CGSize(width: 0, height: 3)
-            view.layer.shadowRadius = 1
             view.backgroundColor = .lightGray
             return view
         }()
@@ -113,6 +118,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 questionLabel.topAnchor.constraint(equalTo: containerConversor.topAnchor, constant: 24),
                 questionLabel.leadingAnchor.constraint(equalTo: containerConversor.leadingAnchor, constant: 25),
                 
+                unityTextField.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 11),
+                unityTextField.leadingAnchor.constraint(equalTo: containerConversor.leadingAnchor, constant: 25),
+                unityTextField.trailingAnchor.constraint(equalTo: containerConversor.trailingAnchor, constant: -48),
+                unityTextField.heightAnchor.constraint(equalToConstant: 56),
+                
                 containerConversor.topAnchor.constraint(equalTo: conversorTitle.bottomAnchor, constant: 32),
                 containerConversor.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
                 containerConversor.heightAnchor.constraint(equalToConstant: 400),
@@ -129,8 +139,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             navigationController?.navigationBar.scrollEdgeAppearance = appearance
             navigationItem.rightBarButtonItem = infoButton
             
+            
             collectionCategories.dataSource = self
             collectionCategories.delegate = self
+            unityTextField.delegate = self
             
             view.addSubview(ScrollView)
             ScrollView.addSubview(containerView)
@@ -139,6 +151,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             containerView.addSubview(conversorTitle)
             containerView.addSubview(containerConversor)
             containerConversor.addSubview(questionLabel)
+            containerConversor.addSubview(unityTextField)
             collectionCategories.frame = view.bounds
             // Do any additional setup after loading the view.
         }
@@ -175,6 +188,23 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 print ("em construção")
             }
 
+    }
+    
+    func getNumber (number: Double) -> Double {
+        print(number)
+        return number
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+           print("TextField did end editing method called")
+            let textField = unityTextField.text ?? ""
+            let double = Double(textField) ?? 0.0
+            getNumber(number: double)
+       }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+          textField.resignFirstResponder()
+          return true
     }
 
 }
