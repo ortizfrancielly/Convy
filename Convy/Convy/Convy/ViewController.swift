@@ -51,6 +51,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             label.text = "Categorias"
             return label
         }()
+            
+        lazy var questionLabel: UILabel = {
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.font = .preferredFont(forTextStyle: .headline)
+            label.adjustsFontForContentSizeCategory = true
+            label.text = "Qual valor você quer converter?"
+            return label
+        }()
         
         lazy var conversorTitle: UILabel = {
             let label = UILabel()
@@ -76,7 +85,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             view.layer.shadowOpacity = 1
             view.layer.shadowOffset = CGSize(width: 0, height: 3)
             view.layer.shadowRadius = 1
-            view.backgroundColor = .blue
+            view.backgroundColor = .lightGray
             return view
         }()
         
@@ -100,6 +109,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 
                 conversorTitle.topAnchor.constraint(equalTo: collectionCategories.bottomAnchor, constant: 32),
                 conversorTitle.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 12),
+                
+                questionLabel.topAnchor.constraint(equalTo: containerConversor.topAnchor, constant: 24),
+                questionLabel.leadingAnchor.constraint(equalTo: containerConversor.leadingAnchor, constant: 25),
                 
                 containerConversor.topAnchor.constraint(equalTo: conversorTitle.bottomAnchor, constant: 32),
                 containerConversor.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
@@ -126,6 +138,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             containerView.addSubview(collectionCategories)
             containerView.addSubview(conversorTitle)
             containerView.addSubview(containerConversor)
+            containerConversor.addSubview(questionLabel)
             collectionCategories.frame = view.bounds
             // Do any additional setup after loading the view.
         }
@@ -156,70 +169,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         @objc func buttonClicked(_ sender: UIButton) {
             if (sender.tag == 0){
                 print(Comprimento.metro.unidadeMedida.nome)
-                containerConversor.backgroundColor = .yellow
             }
             
             else {
-                containerConversor.backgroundColor = .red
+                print ("em construção")
             }
 
     }
 
 }
 
-protocol ConversionViewModel {
-    var valor: Double {get set}
-    var unidadeMedida: [UnidadeMedida] {get}
-    var baseInicial: UnidadeMedida {get set}
-    var baseFinal: UnidadeMedida {get set}
-    
-    func calcular() -> Double
-}
 
-enum Comprimento: CaseIterable {
-    case centimetro
-    case metro
-    case quilometro
-    
-    var unidadeMedida: UnidadeMedida {
-        switch self {
-        case .centimetro:
-            return UnidadeMedida(nome: "Centímetro", base: 0.01)
-        case .metro:
-            return UnidadeMedida(nome: "Metro", base: 1)
-        case .quilometro:
-           return UnidadeMedida(nome: "Quilômetro", base: 1000)
-        }
-    }
-}
 
-struct UnidadeMedida {
-    var nome: String
-    var base: Double
-}
 
-class ComprimentoViewModel: ConversionViewModel {
-    
-    var valor: Double
-    
-    let unidadeMedida: [UnidadeMedida]
-    
-    var baseInicial: UnidadeMedida
-    
-    var baseFinal: UnidadeMedida
-    
-    func calcular() -> Double {
-        let taxaConversao = baseInicial.base / baseFinal.base
-        return valor * taxaConversao
-    }
-    
-    
-    init(){
-        valor = 0
-        unidadeMedida = Comprimento.allCases.map {$0.unidadeMedida}
-        baseInicial = Comprimento.metro.unidadeMedida
-        baseFinal = Comprimento.quilometro.unidadeMedida
-    }
-    
-    
-}

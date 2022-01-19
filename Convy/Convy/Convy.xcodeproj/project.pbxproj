@@ -14,6 +14,10 @@
 		1747D7CC2793730500AC8ACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1747D7CB2793730500AC8ACE /* Assets.xcassets */; };
 		1747D7CF2793730500AC8ACE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1747D7CD2793730500AC8ACE /* LaunchScreen.storyboard */; };
 		1747D7D8279389C900AC8ACE /* cellCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7D7279389C900AC8ACE /* cellCategories.swift */; };
+		1747D7DF2798957C00AC8ACE /* Comprimento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7DE2798957C00AC8ACE /* Comprimento.swift */; };
+		1747D7E2279895C900AC8ACE /* ComprimentoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7E1279895C900AC8ACE /* ComprimentoProtocol.swift */; };
+		1747D7E5279895FB00AC8ACE /* ComprimentoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7E4279895FB00AC8ACE /* ComprimentoViewModel.swift */; };
+		1747D7E82798963200AC8ACE /* UnidadeMedida.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7E72798963200AC8ACE /* UnidadeMedida.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		1747D7CE2793730500AC8ACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1747D7D02793730500AC8ACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1747D7D7279389C900AC8ACE /* cellCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellCategories.swift; sourceTree = "<group>"; };
+		1747D7DE2798957C00AC8ACE /* Comprimento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comprimento.swift; sourceTree = "<group>"; };
+		1747D7E1279895C900AC8ACE /* ComprimentoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComprimentoProtocol.swift; sourceTree = "<group>"; };
+		1747D7E4279895FB00AC8ACE /* ComprimentoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComprimentoViewModel.swift; sourceTree = "<group>"; };
+		1747D7E72798963200AC8ACE /* UnidadeMedida.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnidadeMedida.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +50,9 @@
 		1747D7B62793730400AC8ACE = {
 			isa = PBXGroup;
 			children = (
+				1747D7E62798961900AC8ACE /* Struct */,
+				1747D7E3279895E300AC8ACE /* ViewModel */,
+				1747D7E0279895B600AC8ACE /* Protocols */,
 				1747D7DD2798954B00AC8ACE /* Enum */,
 				1747D7D6279389B600AC8ACE /* Styles */,
 				1747D7C12793730400AC8ACE /* Convy */,
@@ -82,8 +93,33 @@
 		1747D7DD2798954B00AC8ACE /* Enum */ = {
 			isa = PBXGroup;
 			children = (
+				1747D7DE2798957C00AC8ACE /* Comprimento.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		1747D7E0279895B600AC8ACE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1747D7E1279895C900AC8ACE /* ComprimentoProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1747D7E3279895E300AC8ACE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1747D7E4279895FB00AC8ACE /* ComprimentoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1747D7E62798961900AC8ACE /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				1747D7E72798963200AC8ACE /* UnidadeMedida.swift */,
+			);
+			path = Struct;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,10 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1747D7E5279895FB00AC8ACE /* ComprimentoViewModel.swift in Sources */,
+				1747D7DF2798957C00AC8ACE /* Comprimento.swift in Sources */,
 				1747D7C72793730400AC8ACE /* ViewController.swift in Sources */,
 				1747D7D8279389C900AC8ACE /* cellCategories.swift in Sources */,
+				1747D7E2279895C900AC8ACE /* ComprimentoProtocol.swift in Sources */,
 				1747D7C32793730400AC8ACE /* AppDelegate.swift in Sources */,
 				1747D7C52793730400AC8ACE /* SceneDelegate.swift in Sources */,
+				1747D7E82798963200AC8ACE /* UnidadeMedida.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
