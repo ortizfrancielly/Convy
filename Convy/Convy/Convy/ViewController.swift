@@ -11,9 +11,6 @@ func getNumber (number: Double) -> Double {
     return inputUser
 }
 
-var stringTextInitial = String()
-var stringTextFinal = String()
-
 func comparingRowInitial (string1: String) {
     stringTextInitial = string1
 }
@@ -22,6 +19,9 @@ func comparingRowInitial (string1: String) {
 func comparingRowFinal (string2: String) {
     stringTextFinal = string2
 }
+
+var stringTextInitial = String()
+var stringTextFinal = String()
 
 var verificationPicker = 0
 
@@ -342,19 +342,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             pickerViewBaseFinal.reloadAllComponents()
         }
     
-    func getNumber (number: Double) {
-        inputUser = number
-    }
-    
-    @objc func calculateButton(_ sender: UIButton){
-        if stringTextInitial == "Centímetro" && stringTextFinal == "Quilômetro" {
-            viewModel.baseFinal = Comprimento.quilometro.unidadeMedida
-            viewModel.baseInicial = Comprimento.centimetro.unidadeMedida
-            viewModel.valor = inputUser
-            let resposta = viewModel.calcular()
-            respostaLabel.text = String(resposta)
+        func getNumber (number: Double) {
+            inputUser = number
         }
-    }
+    
+        @objc func calculateButton(_ sender: UIButton){
+            if stringTextInitial == "Centímetro" && stringTextFinal == "Quilômetro" {
+                viewModel.baseFinal = Comprimento.quilometro.unidadeMedida
+                viewModel.baseInicial = Comprimento.centimetro.unidadeMedida
+                viewModel.valor = inputUser
+                let resposta = viewModel.calcular()
+                respostaLabel.text = String(resposta)
+            }
+        }
 
     
 }
