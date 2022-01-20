@@ -257,6 +257,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         func getSenderTag (number: Int) {
             verificationPicker = number
             pickerViewBaseInicial.reloadAllComponents()
+            pickerViewBaseFinal.reloadAllComponents()
         }
     
 }

@@ -8,7 +8,13 @@
 import Foundation
 import UIKit
 
-let pickerData: [String] = [Comprimento.centimetro.unidadeMedida.nome, Comprimento.quilometro.unidadeMedida.nome, Comprimento.metro.unidadeMedida.nome]
+let pickerDataComprimento: [String] = [Comprimento.centimetro.unidadeMedida.nome, Comprimento.quilometro.unidadeMedida.nome, Comprimento.metro.unidadeMedida.nome]
+
+let pickerDataMassa: [String] = ["Kg", "G", "mg"]
+
+let pickerDataDados: [String] = ["bytes", "kb", "mb"]
+
+let pickerDataTemperatura: [String] = ["kelvin", "fahreinheit", "celsius"]
 
 internal class BaseInicialDelegate: NSObject, UIPickerViewDelegate {
     
@@ -26,16 +32,19 @@ internal class BaseInicialDelegate: NSObject, UIPickerViewDelegate {
             }
         
         func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            if verificationPicker == 1 {
-                return pickerData[row]
+            if verificationPicker == 3 {
+                return pickerDataComprimento[row]
             }
             else if verificationPicker == 0 {
-                return Comprimento.quilometro.unidadeMedida.nome
-
+                return pickerDataMassa[row]
+            }
+            
+            else if verificationPicker == 2 {
+                return pickerDataDados[row]
             }
             
             else {
-                return Comprimento.centimetro.unidadeMedida.nome
+                return pickerDataTemperatura[row]
             }
     }
 }
