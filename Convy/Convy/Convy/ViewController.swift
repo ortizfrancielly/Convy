@@ -33,6 +33,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 picker.tag = 1
                 return picker
             }()
+    
+            private let baseFinalDelegate = BaseFinalDelegate()
+            private let baseFinalDataSource = BaseFinalDataSource()
+            private lazy var pickerViewBaseFinal: UIPickerView = {
+                let picker = UIPickerView()
+                picker.translatesAutoresizingMaskIntoConstraints = false
+                picker.dataSource = baseFinalDataSource
+                picker.delegate = baseFinalDelegate
+                picker.tag = 1
+                return picker
+            }()
+            
+            
             
             lazy var unityTextField: UITextField = {
                 var textField = UITextField(frame: .zero)
@@ -150,7 +163,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     pickerViewBaseInicial.topAnchor.constraint(equalTo: unityTextField.bottomAnchor, constant: 15),
                     pickerViewBaseInicial.leadingAnchor.constraint(equalTo: containerConversor.leadingAnchor, constant: 25),
                     pickerViewBaseInicial.trailingAnchor.constraint(equalTo: containerConversor.trailingAnchor, constant: -25),
-                    pickerViewBaseInicial.heightAnchor.constraint(equalToConstant: 80)
+                    pickerViewBaseInicial.heightAnchor.constraint(equalToConstant: 80),
+                    
+                    pickerViewBaseFinal.topAnchor.constraint(equalTo: pickerViewBaseInicial.bottomAnchor, constant: 15),
+                    pickerViewBaseFinal.leadingAnchor.constraint(equalTo: containerConversor.leadingAnchor, constant: 25),
+                    pickerViewBaseFinal.trailingAnchor.constraint(equalTo: containerConversor.trailingAnchor, constant: -25),
+                    pickerViewBaseFinal.heightAnchor.constraint(equalToConstant: 80)
 
                 ]}()
             
@@ -176,6 +194,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 containerConversor.addSubview(questionLabel)
                 containerConversor.addSubview(unityTextField)
                 containerConversor.addSubview(pickerViewBaseInicial)
+                containerConversor.addSubview(pickerViewBaseFinal)
                 collectionCategories.frame = view.bounds
                 // Do any additional setup after loading the view.
             }
