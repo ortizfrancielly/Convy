@@ -11,16 +11,29 @@ func getNumber (number: Double) -> Double {
     return inputUser
 }
 
+var stringTextInitial = String()
+var stringTextFinal = String()
+
+func comparingRowInitial (string1: String) {
+    stringTextInitial = string1
+}
+
+
+func comparingRowFinal (string2: String) {
+    stringTextFinal = string2
+}
+
 var verificationPicker = 0
 
 var inputUser = 0.0
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
     
+            var viewModel = ComprimentoViewModel()
     
             var cellId = "cell"
             
-            var categories = ["Massa", "Temperatura", "Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento"]
+            var categories = ["Massa", "Temperatura", "Dados", "Comprimento"]
         
     
             private let baseInicialDelegate = BaseInicialDelegate()
@@ -48,7 +61,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             private lazy var calcButton: UIButton = {
                 var button = UIButton()
                 button.translatesAutoresizingMaskIntoConstraints = false
-                button.addTarget(self, action: #selector(self.calculateButton), for: .touchUpInside)
+                button.addTarget(self, action: #selector(calculateButton(_:)), for: .touchUpInside)
                 button.backgroundColor = .yellowButton
                 button.setTitle("Converter", for: UIControl.State.normal)
                 button.setTitleColor(.black, for: .normal)
@@ -143,6 +156,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 return label
             }()
             
+            lazy var respostaLabel: UILabel = {
+                let label = UILabel()
+                label.translatesAutoresizingMaskIntoConstraints = false
+                label.font = .preferredFont(forTextStyle: .headline)
+                label.adjustsFontForContentSizeCategory = true
+                return label
+            }()
             lazy var conversorTitle: UILabel = {
                 let label = UILabel()
                 label.translatesAutoresizingMaskIntoConstraints = false
@@ -223,6 +243,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     
                     resultadoTitle.topAnchor.constraint(equalTo: calcButton.bottomAnchor, constant: 30),
                     resultadoTitle.leadingAnchor.constraint(equalTo: containerConversor.leadingAnchor, constant: 25),
+                    
+                    respostaLabel.topAnchor.constraint(equalTo: resultadoTitle.bottomAnchor, constant: 26),
+                    respostaLabel.centerXAnchor.constraint(equalTo: containerConversor.centerXAnchor)
 
                 ]}()
             
@@ -253,6 +276,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 containerConversor.addSubview(pickerViewBaseFinal)
                 containerConversor.addSubview(calcButton)
                 containerConversor.addSubview(resultadoTitle)
+                containerConversor.addSubview(respostaLabel)
                 collectionCategories.frame = view.bounds
                 // Do any additional setup after loading the view.
             }
@@ -303,7 +327,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 let textField = unityTextField.text ?? ""
                 let double = Double(textField) ?? 0.0
                 print(double)
-                //getNumber(number: double)
+                getNumber(number: double)
            }
         
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
@@ -318,9 +342,20 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             pickerViewBaseFinal.reloadAllComponents()
         }
     
-    @objc func calculateButton(){
-        return print("oi")
+    func getNumber (number: Double) {
+        inputUser = number
     }
+    
+    @objc func calculateButton(_ sender: UIButton){
+        if stringTextInitial == "Centímetro" && stringTextFinal == "Quilômetro" {
+            viewModel.baseFinal = Comprimento.quilometro.unidadeMedida
+            viewModel.baseInicial = Comprimento.centimetro.unidadeMedida
+            viewModel.valor = inputUser
+            let resposta = viewModel.calcular()
+            respostaLabel.text = String(resposta)
+        }
+    }
+
     
 }
 

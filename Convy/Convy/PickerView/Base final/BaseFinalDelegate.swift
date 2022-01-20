@@ -12,8 +12,15 @@ internal class BaseFinalDelegate: NSObject, UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
         {
-            if row == 0 {
-                print("selecionou a zero")
+            if row == 0 && verificationPicker == 3 {
+                comparingRowFinal(string2: pickerDataComprimento[row])
+            }
+            
+            else if row == 1 && verificationPicker == 3 {
+                comparingRowFinal(string2: pickerDataComprimento[row])
+            }
+            else if row == 0 {
+                print ("selecionou a 0")
             }
             else if row == 1 {
                 print("selecionou a 1")
