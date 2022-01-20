@@ -6,25 +6,30 @@
 
 import UIKit
 
+func getNumber (number: Double) -> Double {
+    inputUser = number
+    return inputUser
+}
 
+var verificationPicker = 0
 
+var inputUser = 0.0
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
     
     
             var cellId = "cell"
-        
-            var verificationPicker = 0
             
             var categories = ["Massa", "Temperatura", "Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento","Dados", "Comprimento"]
-    
-            var pickerData: [String] = [Comprimento.centimetro.unidadeMedida.nome, Comprimento.quilometro.unidadeMedida.nome, Comprimento.metro.unidadeMedida.nome]
         
+    
+            private let baseInicialDelegate = BaseInicialDelegate()
+            private let baseInicialDataSource = BaseInicialDataSource()
             private lazy var pickerViewBaseInicial: UIPickerView = {
                 let picker = UIPickerView()
                 picker.translatesAutoresizingMaskIntoConstraints = false
-                picker.dataSource = self
-                picker.delegate = self
+                picker.dataSource = baseInicialDataSource
+                picker.delegate = baseInicialDelegate
                 picker.tag = 1
                 return picker
             }()
@@ -215,21 +220,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
 //                }
 
         }
-        
-        func getNumber (number: Double) -> Double {
-            print(number)
-            return number
-        }
-        
-        func getSenderTag (number: Int) {
-            verificationPicker = number
-            pickerViewBaseInicial.reloadAllComponents()
-        }
-        
+    
         func textFieldDidEndEditing(_ textField: UITextField) {
                print("TextField did end editing method called")
                 let textField = unityTextField.text ?? ""
                 let double = Double(textField) ?? 0.0
+                print(double)
                 getNumber(number: double)
            }
         
@@ -237,32 +233,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
               textField.resignFirstResponder()
               return true
         }
-        
-        func numberOfComponents(in pickerView: UIPickerView) -> Int {
-            return 1
-        }
-        
-        func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-            return Comprimento.allCases.count
-        }
-        
-        func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            if verificationPicker == 1 {
-                return pickerData[row]
-            }
-            else if verificationPicker == 0 {
-                return Comprimento.quilometro.unidadeMedida.nome
-
-            }
-            
-            else {
-                return Comprimento.centimetro.unidadeMedida.nome
-            }
-
-    }
     
-
+    
+        func getSenderTag (number: Int) {
+            verificationPicker = number
+            pickerViewBaseInicial.reloadAllComponents()
+        }
+    
 }
+
 
 
 
