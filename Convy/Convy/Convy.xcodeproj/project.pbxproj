@@ -22,6 +22,7 @@
 		1747D7EE2799C4A900AC8ACE /* BaseInicialDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7ED2799C4A900AC8ACE /* BaseInicialDataSource.swift */; };
 		1747D7F02799C65400AC8ACE /* BaseFinalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7EF2799C65400AC8ACE /* BaseFinalDelegate.swift */; };
 		1747D7F32799C66D00AC8ACE /* BaseFinalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7F22799C66D00AC8ACE /* BaseFinalDataSource.swift */; };
+		1747D7F52799EECD00AC8ACE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7F42799EECD00AC8ACE /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		1747D7ED2799C4A900AC8ACE /* BaseInicialDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInicialDataSource.swift; sourceTree = "<group>"; };
 		1747D7EF2799C65400AC8ACE /* BaseFinalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFinalDelegate.swift; sourceTree = "<group>"; };
 		1747D7F22799C66D00AC8ACE /* BaseFinalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFinalDataSource.swift; sourceTree = "<group>"; };
+		1747D7F42799EECD00AC8ACE /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		1747D7C12793730400AC8ACE /* Convy */ = {
 			isa = PBXGroup;
 			children = (
+				1747D7F42799EECD00AC8ACE /* UIColorExtension.swift */,
 				1747D7C22793730400AC8ACE /* AppDelegate.swift */,
 				1747D7C42793730400AC8ACE /* SceneDelegate.swift */,
 				1747D7C62793730400AC8ACE /* ViewController.swift */,
@@ -235,6 +238,7 @@
 				1747D7EE2799C4A900AC8ACE /* BaseInicialDataSource.swift in Sources */,
 				1747D7F32799C66D00AC8ACE /* BaseFinalDataSource.swift in Sources */,
 				1747D7D8279389C900AC8ACE /* cellCategories.swift in Sources */,
+				1747D7F52799EECD00AC8ACE /* UIColorExtension.swift in Sources */,
 				1747D7E2279895C900AC8ACE /* ComprimentoProtocol.swift in Sources */,
 				1747D7C32793730400AC8ACE /* AppDelegate.swift in Sources */,
 				1747D7EB2799C0F500AC8ACE /* BaseInicialDelegate.swift in Sources */,

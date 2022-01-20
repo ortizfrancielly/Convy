@@ -45,13 +45,25 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 return picker
             }()
             
+            private lazy var calcButton: UIButton = {
+                var button = UIButton()
+                button.translatesAutoresizingMaskIntoConstraints = false
+                button.addTarget(self, action: #selector(self.calculateButton), for: .touchUpInside)
+                button.backgroundColor = .yellowButton
+                button.setTitle("Converter", for: UIControl.State.normal)
+                button.setTitleColor(.black, for: .normal)
+                button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+                button.layer.cornerRadius = 14.0
+                return button
+            }()
             
             
             lazy var unityTextField: UITextField = {
                 var textField = UITextField(frame: .zero)
                 textField.translatesAutoresizingMaskIntoConstraints = false
                 textField.keyboardType = UIKeyboardType.default
-                textField.backgroundColor = .yellow
+                textField.backgroundColor = .textFieldColor
+                textField.layer.cornerRadius = 7.0
                 textField.clearButtonMode = .whileEditing
                 textField.font = .systemFont(ofSize: 15)
                 return textField
@@ -78,11 +90,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             lazy var ScrollView: UIScrollView = {
                 let view = UIScrollView(frame: .zero)
-                //view.translatesAutoresizingMaskIntoConstraints = false
                 view.backgroundColor = .white
                 view.contentSize = contentViewSize
                 view.frame = self.view.bounds
                 return view
+            }()
+    
+            lazy var resultadoTitle: UILabel = {
+                let label = UILabel()
+                label.translatesAutoresizingMaskIntoConstraints = false
+                label.font = .preferredFont(forTextStyle: .headline)
+                label.adjustsFontForContentSizeCategory = true
+                label.text = "Resultado"
+                return label
             }()
             
             lazy var categoriaTitle: UILabel = {
@@ -93,7 +113,27 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 label.text = "Categorias"
                 return label
             }()
+            
+            lazy var baseInicialTitle: UILabel = {
+                let label = UILabel()
+                label.translatesAutoresizingMaskIntoConstraints = false
+                label.font = .preferredFont(forTextStyle: .headline)
+                label.adjustsFontForContentSizeCategory = true
+                label.text = "Base Inicial"
+                return label
+            }()
                 
+    
+            lazy var baseFinalTitle: UILabel = {
+                let label = UILabel()
+                label.translatesAutoresizingMaskIntoConstraints = false
+                label.font = .preferredFont(forTextStyle: .headline)
+                label.adjustsFontForContentSizeCategory = true
+                label.text = "Base Final"
+                return label
+            }()
+    
+    
             lazy var questionLabel: UILabel = {
                 let label = UILabel()
                 label.translatesAutoresizingMaskIntoConstraints = false
@@ -115,14 +155,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             lazy var containerView: UIView = {
                 let view = UIView()
                 view.frame.size = contentViewSize
-                //view.backgroundColor = .white
                 return view
             }()
             
             lazy var containerConversor: UIView = {
                 let view = UIView()
                 view.translatesAutoresizingMaskIntoConstraints = false
-                view.backgroundColor = .lightGray
+                view.backgroundColor = .grayCard
+                view.layer.cornerRadius = 14.0
                 return view
             }()
             
@@ -152,23 +192,37 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                     
                     unityTextField.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 11),
                     unityTextField.leadingAnchor.constraint(equalTo: containerConversor.leadingAnchor, constant: 25),
-                    unityTextField.trailingAnchor.constraint(equalTo: containerConversor.trailingAnchor, constant: -48),
+                    unityTextField.trailingAnchor.constraint(equalTo: containerConversor.trailingAnchor, constant: -25),
                     unityTextField.heightAnchor.constraint(equalToConstant: 56),
                     
                     containerConversor.topAnchor.constraint(equalTo: conversorTitle.bottomAnchor, constant: 32),
                     containerConversor.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
-                    containerConversor.heightAnchor.constraint(equalToConstant: 400),
-                    containerConversor.widthAnchor.constraint(equalToConstant: 380),
+                    containerConversor.heightAnchor.constraint(equalToConstant: 600),
+                    containerConversor.widthAnchor.constraint(equalToConstant: 350),
                     
-                    pickerViewBaseInicial.topAnchor.constraint(equalTo: unityTextField.bottomAnchor, constant: 15),
+                    baseInicialTitle.topAnchor.constraint(equalTo: unityTextField.bottomAnchor, constant: 20),
+                    baseInicialTitle.leadingAnchor.constraint(equalTo: containerConversor.leadingAnchor, constant: 25),
+                    
+                    pickerViewBaseInicial.topAnchor.constraint(equalTo: baseInicialTitle.bottomAnchor, constant: 15),
                     pickerViewBaseInicial.leadingAnchor.constraint(equalTo: containerConversor.leadingAnchor, constant: 25),
                     pickerViewBaseInicial.trailingAnchor.constraint(equalTo: containerConversor.trailingAnchor, constant: -25),
                     pickerViewBaseInicial.heightAnchor.constraint(equalToConstant: 80),
                     
-                    pickerViewBaseFinal.topAnchor.constraint(equalTo: pickerViewBaseInicial.bottomAnchor, constant: 15),
+                    baseFinalTitle.topAnchor.constraint(equalTo: pickerViewBaseInicial.bottomAnchor, constant: 12),
+                    baseFinalTitle.leadingAnchor.constraint(equalTo: containerConversor.leadingAnchor, constant: 25),
+                    
+                    pickerViewBaseFinal.topAnchor.constraint(equalTo: baseFinalTitle.bottomAnchor, constant: 15),
                     pickerViewBaseFinal.leadingAnchor.constraint(equalTo: containerConversor.leadingAnchor, constant: 25),
                     pickerViewBaseFinal.trailingAnchor.constraint(equalTo: containerConversor.trailingAnchor, constant: -25),
-                    pickerViewBaseFinal.heightAnchor.constraint(equalToConstant: 80)
+                    pickerViewBaseFinal.heightAnchor.constraint(equalToConstant: 80),
+                    
+                    calcButton.topAnchor.constraint(equalTo: pickerViewBaseFinal.bottomAnchor, constant: 40),
+                    calcButton.leadingAnchor.constraint(equalTo: containerConversor.leadingAnchor, constant: 50),
+                    calcButton.trailingAnchor.constraint(equalTo: containerConversor.trailingAnchor, constant: -50),
+                    calcButton.heightAnchor.constraint(equalToConstant: 56),
+                    
+                    resultadoTitle.topAnchor.constraint(equalTo: calcButton.bottomAnchor, constant: 30),
+                    resultadoTitle.leadingAnchor.constraint(equalTo: containerConversor.leadingAnchor, constant: 25),
 
                 ]}()
             
@@ -193,8 +247,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 containerView.addSubview(containerConversor)
                 containerConversor.addSubview(questionLabel)
                 containerConversor.addSubview(unityTextField)
+                containerConversor.addSubview(baseInicialTitle)
                 containerConversor.addSubview(pickerViewBaseInicial)
+                containerConversor.addSubview(baseFinalTitle)
                 containerConversor.addSubview(pickerViewBaseFinal)
+                containerConversor.addSubview(calcButton)
+                containerConversor.addSubview(resultadoTitle)
                 collectionCategories.frame = view.bounds
                 // Do any additional setup after loading the view.
             }
@@ -245,7 +303,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 let textField = unityTextField.text ?? ""
                 let double = Double(textField) ?? 0.0
                 print(double)
-                getNumber(number: double)
+                //getNumber(number: double)
            }
         
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
@@ -259,6 +317,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             pickerViewBaseInicial.reloadAllComponents()
             pickerViewBaseFinal.reloadAllComponents()
         }
+    
+    @objc func calculateButton(){
+        return print("oi")
+    }
     
 }
 
