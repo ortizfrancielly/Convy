@@ -45,6 +45,16 @@ internal class BaseFinalDelegate: NSObject, UIPickerViewDelegate {
                 comparingRowFinal(string2: pickerDataDados[row])
             }
             
+            else if row == 0 && verificationPicker == 1 {
+                comparingRowFinal(string2: pickerDataTemperatura[row])
+            }
+            
+            else if row == 1 && verificationPicker == 1 {
+                comparingRowFinal(string2: pickerDataTemperatura[row])
+            }
+            else if row == 2 && verificationPicker == 1 {
+                comparingRowFinal(string2: pickerDataTemperatura[row])
+            }
             
             else {
                 print("selecionou a x")

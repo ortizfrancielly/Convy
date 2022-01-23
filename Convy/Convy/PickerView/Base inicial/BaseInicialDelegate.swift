@@ -14,7 +14,7 @@ let pickerDataMassa: [String] = [Massa.miligrama.unidadeMedida.nome, Massa.grama
 
 let pickerDataDados: [String] = [Dados.kilobyte.unidadeMedida.nome, Dados.megabyte.unidadeMedida.nome, Dados.gigabyte.unidadeMedida.nome]
 
-let pickerDataTemperatura: [String] = ["kelvin", "fahreinheit", "celsius"]
+let pickerDataTemperatura: [String] = [Temperatura.kelvin.unidadeMedidaTemp.nome, Temperatura.celsius.unidadeMedidaTemp.nome, Temperatura.fahrenheit.unidadeMedidaTemp.nome]
 
 internal class BaseInicialDelegate: NSObject, UIPickerViewDelegate {
     
@@ -48,6 +48,16 @@ internal class BaseInicialDelegate: NSObject, UIPickerViewDelegate {
                 }
                 else if row == 2 && verificationPicker == 2 {
                     comparingRowInitial(string1: pickerDataDados[row])
+                }
+                
+                else if row == 0 && verificationPicker == 1 {
+                    comparingRowInitial(string1: pickerDataTemperatura[row])
+                }
+                else if row == 1 && verificationPicker == 1 {
+                    comparingRowInitial(string1: pickerDataTemperatura[row])
+                }
+                else if row == 2 && verificationPicker == 1 {
+                    comparingRowInitial(string1: pickerDataTemperatura[row])
                 }
                 
                 else {

@@ -27,6 +27,10 @@
 		1747D7F9279DF95000AC8ACE /* Massa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7F8279DF95000AC8ACE /* Massa.swift */; };
 		1747D7FB279E033900AC8ACE /* Dados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7FA279E033900AC8ACE /* Dados.swift */; };
 		1747D7FD279E058A00AC8ACE /* DadosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7FC279E058A00AC8ACE /* DadosViewModel.swift */; };
+		1747D7FF279E0AB000AC8ACE /* Temperatura.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7FE279E0AB000AC8ACE /* Temperatura.swift */; };
+		1747D801279E0B2E00AC8ACE /* UnidadeMedidaTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D800279E0B2E00AC8ACE /* UnidadeMedidaTemp.swift */; };
+		1747D803279E0B7600AC8ACE /* TempProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D802279E0B7600AC8ACE /* TempProtocol.swift */; };
+		1747D805279E0BAF00AC8ACE /* TemperaturaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D804279E0BAF00AC8ACE /* TemperaturaViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +56,10 @@
 		1747D7F8279DF95000AC8ACE /* Massa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Massa.swift; sourceTree = "<group>"; };
 		1747D7FA279E033900AC8ACE /* Dados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dados.swift; sourceTree = "<group>"; };
 		1747D7FC279E058A00AC8ACE /* DadosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosViewModel.swift; sourceTree = "<group>"; };
+		1747D7FE279E0AB000AC8ACE /* Temperatura.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperatura.swift; sourceTree = "<group>"; };
+		1747D800279E0B2E00AC8ACE /* UnidadeMedidaTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnidadeMedidaTemp.swift; sourceTree = "<group>"; };
+		1747D802279E0B7600AC8ACE /* TempProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempProtocol.swift; sourceTree = "<group>"; };
+		1747D804279E0BAF00AC8ACE /* TemperaturaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperaturaViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +124,7 @@
 				1747D7DE2798957C00AC8ACE /* Comprimento.swift */,
 				1747D7F8279DF95000AC8ACE /* Massa.swift */,
 				1747D7FA279E033900AC8ACE /* Dados.swift */,
+				1747D7FE279E0AB000AC8ACE /* Temperatura.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -124,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				1747D7E1279895C900AC8ACE /* ConversionsProtocol.swift */,
+				1747D802279E0B7600AC8ACE /* TempProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -134,6 +144,7 @@
 				1747D7E4279895FB00AC8ACE /* ComprimentoViewModel.swift */,
 				1747D7F6279DF82900AC8ACE /* MassaViewModel.swift */,
 				1747D7FC279E058A00AC8ACE /* DadosViewModel.swift */,
+				1747D804279E0BAF00AC8ACE /* TemperaturaViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -142,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				1747D7E72798963200AC8ACE /* UnidadeMedida.swift */,
+				1747D800279E0B2E00AC8ACE /* UnidadeMedidaTemp.swift */,
 			);
 			path = Struct;
 			sourceTree = "<group>";
@@ -246,15 +258,19 @@
 			files = (
 				1747D7E5279895FB00AC8ACE /* ComprimentoViewModel.swift in Sources */,
 				1747D7FB279E033900AC8ACE /* Dados.swift in Sources */,
+				1747D7FF279E0AB000AC8ACE /* Temperatura.swift in Sources */,
 				1747D7DF2798957C00AC8ACE /* Comprimento.swift in Sources */,
 				1747D7C72793730400AC8ACE /* ViewController.swift in Sources */,
 				1747D7EE2799C4A900AC8ACE /* BaseInicialDataSource.swift in Sources */,
+				1747D805279E0BAF00AC8ACE /* TemperaturaViewModel.swift in Sources */,
 				1747D7F32799C66D00AC8ACE /* BaseFinalDataSource.swift in Sources */,
 				1747D7D8279389C900AC8ACE /* cellCategories.swift in Sources */,
 				1747D7F52799EECD00AC8ACE /* UIColorExtension.swift in Sources */,
+				1747D801279E0B2E00AC8ACE /* UnidadeMedidaTemp.swift in Sources */,
 				1747D7E2279895C900AC8ACE /* ConversionsProtocol.swift in Sources */,
 				1747D7F7279DF82900AC8ACE /* MassaViewModel.swift in Sources */,
 				1747D7C32793730400AC8ACE /* AppDelegate.swift in Sources */,
+				1747D803279E0B7600AC8ACE /* TempProtocol.swift in Sources */,
 				1747D7EB2799C0F500AC8ACE /* BaseInicialDelegate.swift in Sources */,
 				1747D7F02799C65400AC8ACE /* BaseFinalDelegate.swift in Sources */,
 				1747D7F9279DF95000AC8ACE /* Massa.swift in Sources */,

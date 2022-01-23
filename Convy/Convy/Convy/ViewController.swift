@@ -32,6 +32,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             var viewModelComprimento = ComprimentoViewModel()
             var viewModelMassa = MassaViewModel()
             var viewModelDados = DadosViewModel()
+            var viewModelTemp = TemperaturaViewModel()
     
             var cellId = "cell"
             
@@ -366,7 +367,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             }
             
             else {
-                print("funcionou?")
+                let resultadoFinal = viewModelTemp.verifiesRowsTemp(InicialText: stringTextInitial, FinalText: stringTextFinal, value: inputUser)
+                respostaLabel.text = String(resultadoFinal)
             }
         }
 
