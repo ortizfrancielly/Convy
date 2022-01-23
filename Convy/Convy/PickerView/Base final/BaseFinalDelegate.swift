@@ -19,14 +19,11 @@ internal class BaseFinalDelegate: NSObject, UIPickerViewDelegate {
             else if row == 1 && verificationPicker == 3 {
                 comparingRowFinal(string2: pickerDataComprimento[row])
             }
-            else if row == 0 {
-                print ("selecionou a 0")
-            }
-            else if row == 1 {
-                print("selecionou a 1")
+            else if row == 2 {
+                comparingRowFinal(string2: pickerDataComprimento[row])
             }
             else {
-                print("selecionou a 2")
+                print("selecionou a x")
             }
         }
     

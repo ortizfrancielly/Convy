@@ -305,20 +305,29 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             }
             
             @objc func buttonClicked(_ sender: UIButton) {
-                //if (sender.tag == 0){
+                if (sender.tag == 0){
+                    let senderTag = sender.tag
+                    print(senderTag)
+                    print(Comprimento.metro.unidadeMedida.nome)
+                    getSenderTag(number: senderTag)
+                    print(senderTag)
+                }
+                
+                else if (sender.tag == 1 ){
+                    let senderTag = sender.tag
+                    print(Comprimento.quilometro.unidadeMedida.nome)
+                    getSenderTag(number: senderTag)
+                }
+                else  if (sender.tag == 2){
+                    let senderTag = sender.tag
+                    print(Comprimento.centimetro.unidadeMedida.nome)
+                    getSenderTag(number: senderTag)
+                }
+                else {
                     let senderTag = sender.tag
                     print(Comprimento.metro.unidadeMedida.nome)
                     getSenderTag(number: senderTag)
-                //}
-                
-               // else if (sender.tag == 1 ){
-//                    let senderTag = sender.tag
-//                    print(Comprimento.quilometro.unidadeMedida.nome)
-//                    getSenderTag(number: senderTag)
-               // }
-//                else {
-//                    print("socorro")
-//                }
+                }
 
         }
     
@@ -347,12 +356,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     
         @objc func calculateButton(_ sender: UIButton){
-            if stringTextInitial == "Centímetro" && stringTextFinal == "Quilômetro" {
-                viewModel.baseFinal = Comprimento.quilometro.unidadeMedida
-                viewModel.baseInicial = Comprimento.centimetro.unidadeMedida
-                viewModel.valor = inputUser
-                let resposta = viewModel.calcular()
-                respostaLabel.text = String(resposta)
+            if verificationPicker == 3 {
+                let resultadoFinal = viewModel.verifiesRowsComprimento(InicialText: stringTextInitial, FinalText: stringTextFinal, value: inputUser)
+                respostaLabel.text = String(resultadoFinal)
+            }
+
+            else {
+                print("funcionou?")
             }
         }
 

@@ -26,14 +26,12 @@ internal class BaseInicialDelegate: NSObject, UIPickerViewDelegate {
                 else if row == 1 && verificationPicker == 3 {
                     comparingRowInitial(string1: pickerDataComprimento[row])
                 }
-                else if row == 0 {
-                    print ("selecionou a 0")
+                else if row == 2 && verificationPicker == 3 {
+                    comparingRowInitial(string1: pickerDataComprimento[row])
                 }
-                else if row == 1 {
-                    print("selecionou a 1")
-                }
+                
                 else {
-                    print("selecionou a 2")
+                    print("selecionou a x")
                 }
             }
         
