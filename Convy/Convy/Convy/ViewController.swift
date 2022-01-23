@@ -29,7 +29,8 @@ var inputUser = 0.0
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
     
-            var viewModel = ComprimentoViewModel()
+            var viewModelComprimento = ComprimentoViewModel()
+            var viewModelMassa = MassaViewModel()
     
             var cellId = "cell"
             
@@ -307,32 +308,25 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             @objc func buttonClicked(_ sender: UIButton) {
                 if (sender.tag == 0){
                     let senderTag = sender.tag
-                    print(senderTag)
-                    print(Comprimento.metro.unidadeMedida.nome)
                     getSenderTag(number: senderTag)
-                    print(senderTag)
                 }
                 
                 else if (sender.tag == 1 ){
                     let senderTag = sender.tag
-                    print(Comprimento.quilometro.unidadeMedida.nome)
                     getSenderTag(number: senderTag)
                 }
                 else  if (sender.tag == 2){
                     let senderTag = sender.tag
-                    print(Comprimento.centimetro.unidadeMedida.nome)
                     getSenderTag(number: senderTag)
                 }
                 else {
                     let senderTag = sender.tag
-                    print(Comprimento.metro.unidadeMedida.nome)
                     getSenderTag(number: senderTag)
                 }
 
         }
     
         func textFieldDidEndEditing(_ textField: UITextField) {
-               print("TextField did end editing method called")
                 let textField = unityTextField.text ?? ""
                 let double = Double(textField) ?? 0.0
                 print(double)
@@ -357,7 +351,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
         @objc func calculateButton(_ sender: UIButton){
             if verificationPicker == 3 {
-                let resultadoFinal = viewModel.verifiesRowsComprimento(InicialText: stringTextInitial, FinalText: stringTextFinal, value: inputUser)
+                let resultadoFinal = viewModelComprimento.verifiesRowsComprimento(InicialText: stringTextInitial, FinalText: stringTextFinal, value: inputUser)
+                respostaLabel.text = String(resultadoFinal)
+            }
+            else if verificationPicker == 0 {
+                let resultadoFinal = viewModelMassa.verifiesRowsMassa(InicialText: stringTextInitial, FinalText: stringTextFinal, value: inputUser)
                 respostaLabel.text = String(resultadoFinal)
             }
 

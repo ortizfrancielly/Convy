@@ -10,7 +10,7 @@ import UIKit
 
 let pickerDataComprimento: [String] = [Comprimento.centimetro.unidadeMedida.nome, Comprimento.quilometro.unidadeMedida.nome, Comprimento.metro.unidadeMedida.nome]
 
-let pickerDataMassa: [String] = ["Kg", "G", "mg"]
+let pickerDataMassa: [String] = [Massa.miligrama.unidadeMedida.nome, Massa.grama.unidadeMedida.nome, Massa.quilograma.unidadeMedida.nome]
 
 let pickerDataDados: [String] = ["bytes", "kb", "mb"]
 
@@ -28,6 +28,16 @@ internal class BaseInicialDelegate: NSObject, UIPickerViewDelegate {
                 }
                 else if row == 2 && verificationPicker == 3 {
                     comparingRowInitial(string1: pickerDataComprimento[row])
+                }
+                
+                if row == 0 && verificationPicker == 0 {
+                    comparingRowInitial(string1: pickerDataMassa[row])
+                }
+                else if row == 1 && verificationPicker == 0 {
+                    comparingRowInitial(string1: pickerDataMassa[row])
+                }
+                else if row == 2 && verificationPicker == 0 {
+                    comparingRowInitial(string1: pickerDataMassa[row])
                 }
                 
                 else {
