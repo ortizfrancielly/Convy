@@ -31,6 +31,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
             var viewModelComprimento = ComprimentoViewModel()
             var viewModelMassa = MassaViewModel()
+            var viewModelDados = DadosViewModel()
     
             var cellId = "cell"
             
@@ -359,6 +360,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 respostaLabel.text = String(resultadoFinal)
             }
 
+            else if verificationPicker == 2 {
+                let resultadoFinal = viewModelDados.verifiesRowsDados(InicialText: stringTextInitial, FinalText: stringTextFinal, value: inputUser)
+                respostaLabel.text = String(resultadoFinal)
+            }
+            
             else {
                 print("funcionou?")
             }

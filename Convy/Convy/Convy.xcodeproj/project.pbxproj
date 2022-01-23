@@ -25,6 +25,8 @@
 		1747D7F52799EECD00AC8ACE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7F42799EECD00AC8ACE /* UIColorExtension.swift */; };
 		1747D7F7279DF82900AC8ACE /* MassaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7F6279DF82900AC8ACE /* MassaViewModel.swift */; };
 		1747D7F9279DF95000AC8ACE /* Massa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7F8279DF95000AC8ACE /* Massa.swift */; };
+		1747D7FB279E033900AC8ACE /* Dados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7FA279E033900AC8ACE /* Dados.swift */; };
+		1747D7FD279E058A00AC8ACE /* DadosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D7FC279E058A00AC8ACE /* DadosViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		1747D7F42799EECD00AC8ACE /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		1747D7F6279DF82900AC8ACE /* MassaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MassaViewModel.swift; sourceTree = "<group>"; };
 		1747D7F8279DF95000AC8ACE /* Massa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Massa.swift; sourceTree = "<group>"; };
+		1747D7FA279E033900AC8ACE /* Dados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dados.swift; sourceTree = "<group>"; };
+		1747D7FC279E058A00AC8ACE /* DadosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 			children = (
 				1747D7DE2798957C00AC8ACE /* Comprimento.swift */,
 				1747D7F8279DF95000AC8ACE /* Massa.swift */,
+				1747D7FA279E033900AC8ACE /* Dados.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			children = (
 				1747D7E4279895FB00AC8ACE /* ComprimentoViewModel.swift */,
 				1747D7F6279DF82900AC8ACE /* MassaViewModel.swift */,
+				1747D7FC279E058A00AC8ACE /* DadosViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -239,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1747D7E5279895FB00AC8ACE /* ComprimentoViewModel.swift in Sources */,
+				1747D7FB279E033900AC8ACE /* Dados.swift in Sources */,
 				1747D7DF2798957C00AC8ACE /* Comprimento.swift in Sources */,
 				1747D7C72793730400AC8ACE /* ViewController.swift in Sources */,
 				1747D7EE2799C4A900AC8ACE /* BaseInicialDataSource.swift in Sources */,
@@ -253,6 +260,7 @@
 				1747D7F9279DF95000AC8ACE /* Massa.swift in Sources */,
 				1747D7C52793730400AC8ACE /* SceneDelegate.swift in Sources */,
 				1747D7E82798963200AC8ACE /* UnidadeMedida.swift in Sources */,
+				1747D7FD279E058A00AC8ACE /* DadosViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

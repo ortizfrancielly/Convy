@@ -23,7 +23,7 @@ internal class BaseFinalDelegate: NSObject, UIPickerViewDelegate {
                 comparingRowFinal(string2: pickerDataComprimento[row])
             }
             
-            if row == 0 && verificationPicker == 0 {
+            else if row == 0 && verificationPicker == 0 {
                 comparingRowFinal(string2: pickerDataMassa[row])
             }
             
@@ -33,6 +33,18 @@ internal class BaseFinalDelegate: NSObject, UIPickerViewDelegate {
             else if row == 2 && verificationPicker == 0 {
                 comparingRowFinal(string2: pickerDataMassa[row])
             }
+            
+            else if row == 0 && verificationPicker == 2 {
+                comparingRowFinal(string2: pickerDataDados[row])
+            }
+            
+            else if row == 1 && verificationPicker == 2 {
+                comparingRowFinal(string2: pickerDataDados[row])
+            }
+            else if row == 2 && verificationPicker == 2 {
+                comparingRowFinal(string2: pickerDataDados[row])
+            }
+            
             
             else {
                 print("selecionou a x")

@@ -27,7 +27,7 @@ class MassaViewModel: ConversionViewModel {
         valor = 0
         unidadeMedida = Massa.allCases.map {$0.unidadeMedida}
         baseInicial = Massa.grama.unidadeMedida
-        baseFinal = Comprimento.quilometro.unidadeMedida
+        baseFinal = Massa.quilograma.unidadeMedida
     }
     
     func verifiesRowsMassa (InicialText: String, FinalText: String, value: Double) -> Double {
