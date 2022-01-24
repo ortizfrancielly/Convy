@@ -371,7 +371,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 respostaLabel.text = String(resultadoFinal)
             }
         }
-
     
 }
 

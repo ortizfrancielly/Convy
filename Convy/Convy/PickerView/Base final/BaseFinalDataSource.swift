@@ -14,7 +14,7 @@ internal class BaseFinalDataSource: NSObject, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return Comprimento.allCases.count
+        return 4
     }
     
 

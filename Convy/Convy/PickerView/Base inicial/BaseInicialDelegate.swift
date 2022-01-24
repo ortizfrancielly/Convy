@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-let pickerDataComprimento: [String] = [Comprimento.centimetro.unidadeMedida.nome, Comprimento.quilometro.unidadeMedida.nome, Comprimento.metro.unidadeMedida.nome]
+let pickerDataComprimento: [String] = ["Escolha sua base", Comprimento.centimetro.unidadeMedida.nome, Comprimento.quilometro.unidadeMedida.nome, Comprimento.metro.unidadeMedida.nome]
 
-let pickerDataMassa: [String] = [Massa.miligrama.unidadeMedida.nome, Massa.grama.unidadeMedida.nome, Massa.quilograma.unidadeMedida.nome]
+let pickerDataMassa: [String] = ["Escolha sua base", Massa.miligrama.unidadeMedida.nome, Massa.grama.unidadeMedida.nome, Massa.quilograma.unidadeMedida.nome]
 
-let pickerDataDados: [String] = [Dados.kilobyte.unidadeMedida.nome, Dados.megabyte.unidadeMedida.nome, Dados.gigabyte.unidadeMedida.nome]
+let pickerDataDados: [String] = ["Escolha sua base", Dados.kilobyte.unidadeMedida.nome, Dados.megabyte.unidadeMedida.nome, Dados.gigabyte.unidadeMedida.nome]
 
-let pickerDataTemperatura: [String] = [Temperatura.kelvin.unidadeMedidaTemp.nome, Temperatura.celsius.unidadeMedidaTemp.nome, Temperatura.fahrenheit.unidadeMedidaTemp.nome]
+let pickerDataTemperatura: [String] = ["Escolha sua base", Temperatura.kelvin.unidadeMedidaTemp.nome, Temperatura.celsius.unidadeMedidaTemp.nome, Temperatura.fahrenheit.unidadeMedidaTemp.nome]
 
 internal class BaseInicialDelegate: NSObject, UIPickerViewDelegate {
     
@@ -56,13 +56,10 @@ internal class BaseInicialDelegate: NSObject, UIPickerViewDelegate {
                 else if row == 1 && verificationPicker == 1 {
                     comparingRowInitial(string1: pickerDataTemperatura[row])
                 }
-                else if row == 2 && verificationPicker == 1 {
+                else  {
                     comparingRowInitial(string1: pickerDataTemperatura[row])
                 }
                 
-                else {
-                    print("selecionou a x")
-                }
             }
         
         func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
