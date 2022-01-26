@@ -29,6 +29,10 @@ var inputUser = 0.0
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate {
     
+    
+            var accessoryDoneButton: UIBarButtonItem!
+            let accessoryToolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
+    
             var viewModelComprimento = ComprimentoViewModel()
             var viewModelMassa = MassaViewModel()
             var viewModelDados = DadosViewModel()
@@ -58,6 +62,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 picker.dataSource = baseFinalDataSource
                 picker.delegate = baseFinalDelegate
                 picker.tag = 1
+                picker.backgroundColor = .grayCard
                 return picker
             }()
             
@@ -82,6 +87,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 textField.layer.cornerRadius = 7.0
                 textField.clearButtonMode = .whileEditing
                 textField.font = .systemFont(ofSize: 15)
+                textField.textColor = .black
                 return textField
             }()
             
@@ -92,15 +98,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 collection.translatesAutoresizingMaskIntoConstraints = false
                 collection.register(cellCategories.self, forCellWithReuseIdentifier: cellId)
                 layout.itemSize = CGSize(width: 100, height: 105)
+                collection.backgroundColor = .white
                 return collection
             }()
             
-            private lazy var infoButton: UIBarButtonItem = {
-                var exitButton = UIBarButtonItem()
-                exitButton = UIBarButtonItem(image: UIImage(systemName: "info.circle"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(infoTap(_:)))
-                exitButton.tintColor = .blue
-                return exitButton
-            }()
             
             lazy var contentViewSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 400)
             
@@ -258,8 +259,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 let appearance = UINavigationBarAppearance()
                 appearance.configureWithOpaqueBackground()
                 navigationController?.navigationBar.scrollEdgeAppearance = appearance
-                navigationItem.rightBarButtonItem = infoButton
+
                 
+                
+                self.accessoryDoneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.donePressed))
+                self.accessoryToolBar.items = [self.accessoryDoneButton]
+                self.unityTextField.inputAccessoryView = self.accessoryToolBar
                 
                 collectionCategories.dataSource = self
                 collectionCategories.delegate = self
@@ -288,9 +293,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 NSLayoutConstraint.activate(constraints)
             }
             
-            @objc private func infoTap (_ sender: UIButton) {
-                print ("oi")
-            }
             
             func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
                 return categories.count
@@ -349,6 +351,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
         func getNumber (number: Double) {
             inputUser = number
+        }
+    
+        @objc func donePressed() {
+            view.endEditing(true)
         }
     
         @objc func calculateButton(_ sender: UIButton){

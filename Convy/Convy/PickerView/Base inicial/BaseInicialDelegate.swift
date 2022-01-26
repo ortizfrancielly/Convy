@@ -18,6 +18,17 @@ let pickerDataTemperatura: [String] = ["Escolha sua base", Temperatura.kelvin.un
 
 internal class BaseInicialDelegate: NSObject, UIPickerViewDelegate {
     
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
+        if verificationPicker == 3 {
+        let attributedString = NSAttributedString(string: pickerDataComprimento[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.red])
+            return attributedString }
+        else {
+            let attributedString = NSAttributedString(string: pickerDataTemperatura[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.red])
+                return attributedString }
+    }
+    
+
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
             {
                 if row == 0 && verificationPicker == 3 {
@@ -27,6 +38,9 @@ internal class BaseInicialDelegate: NSObject, UIPickerViewDelegate {
                     comparingRowInitial(string1: pickerDataComprimento[row])
                 }
                 else if row == 2 && verificationPicker == 3 {
+                    comparingRowInitial(string1: pickerDataComprimento[row])
+                }
+                else if row == 3 && verificationPicker == 3 {
                     comparingRowInitial(string1: pickerDataComprimento[row])
                 }
                 
@@ -40,6 +54,10 @@ internal class BaseInicialDelegate: NSObject, UIPickerViewDelegate {
                     comparingRowInitial(string1: pickerDataMassa[row])
                 }
                 
+                else if row == 3 && verificationPicker == 0 {
+                    comparingRowInitial(string1: pickerDataMassa[row])
+                }
+                
                 else if row == 0 && verificationPicker == 2 {
                     comparingRowInitial(string1: pickerDataDados[row])
                 }
@@ -50,13 +68,20 @@ internal class BaseInicialDelegate: NSObject, UIPickerViewDelegate {
                     comparingRowInitial(string1: pickerDataDados[row])
                 }
                 
+                else if row == 3 && verificationPicker == 2 {
+                    comparingRowInitial(string1: pickerDataDados[row])
+                }
+                
                 else if row == 0 && verificationPicker == 1 {
                     comparingRowInitial(string1: pickerDataTemperatura[row])
                 }
                 else if row == 1 && verificationPicker == 1 {
                     comparingRowInitial(string1: pickerDataTemperatura[row])
                 }
-                else  {
+                else if row == 2 && verificationPicker == 1  {
+                    comparingRowInitial(string1: pickerDataTemperatura[row])
+                }
+                else {
                     comparingRowInitial(string1: pickerDataTemperatura[row])
                 }
                 
