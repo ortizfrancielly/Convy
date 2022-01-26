@@ -62,7 +62,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 picker.dataSource = baseFinalDataSource
                 picker.delegate = baseFinalDelegate
                 picker.tag = 1
-                picker.backgroundColor = .grayCard
                 return picker
             }()
             
@@ -119,6 +118,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 label.font = .preferredFont(forTextStyle: .headline)
                 label.adjustsFontForContentSizeCategory = true
                 label.text = "Resultado"
+                label.textColor = .black
                 return label
             }()
             
@@ -128,6 +128,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 label.font = .preferredFont(forTextStyle: .largeTitle)
                 label.adjustsFontForContentSizeCategory = true
                 label.text = "Categorias"
+                label.textColor = .black
                 return label
             }()
             
@@ -137,6 +138,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 label.font = .preferredFont(forTextStyle: .headline)
                 label.adjustsFontForContentSizeCategory = true
                 label.text = "Base Inicial"
+                label.textColor = .black
                 return label
             }()
                 
@@ -146,6 +148,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 label.translatesAutoresizingMaskIntoConstraints = false
                 label.font = .preferredFont(forTextStyle: .headline)
                 label.adjustsFontForContentSizeCategory = true
+                label.textColor = .black
                 label.text = "Base Final"
                 return label
             }()
@@ -157,6 +160,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 label.font = .preferredFont(forTextStyle: .headline)
                 label.adjustsFontForContentSizeCategory = true
                 label.text = "Qual valor você quer converter?"
+                label.textColor = .black
                 return label
             }()
             
@@ -164,6 +168,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 let label = UILabel()
                 label.translatesAutoresizingMaskIntoConstraints = false
                 label.font = .preferredFont(forTextStyle: .headline)
+                label.textColor = .black
                 label.adjustsFontForContentSizeCategory = true
                 return label
             }()
@@ -172,6 +177,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 label.translatesAutoresizingMaskIntoConstraints = false
                 label.font = .preferredFont(forTextStyle: .largeTitle)
                 label.adjustsFontForContentSizeCategory = true
+                label.textColor = .black
                 label.text = "Conversão"
                 return label
             }()

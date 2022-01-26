@@ -14,11 +14,19 @@ internal class BaseFinalDelegate: NSObject, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
 
         if verificationPicker == 3 {
-        let attributedString = NSAttributedString(string: pickerDataComprimento[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.red])
+        let attributedString = NSAttributedString(string: pickerDataComprimento[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.black])
             return attributedString }
-        else {
-            let attributedString = NSAttributedString(string: pickerDataTemperatura[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.red])
+        else if verificationPicker == 0 {
+            let attributedString = NSAttributedString(string: pickerDataMassa[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.black])
                 return attributedString }
+        else if verificationPicker == 2 {
+            let attributedString = NSAttributedString(string: pickerDataDados[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.black])
+                return attributedString
+        }
+        else {
+            let attributedString = NSAttributedString(string: pickerDataTemperatura[row], attributes: [NSAttributedString.Key.foregroundColor : UIColor.black])
+                return attributedString
+        }
 }
     
     
