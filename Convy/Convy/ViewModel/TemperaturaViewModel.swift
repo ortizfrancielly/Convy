@@ -35,11 +35,11 @@ class TemperaturaViewModel: TempViewModel {
         case "Celsius":
             if InicialText == "Celsius" && FinalText == "Fahrenheit" {
                 viewModel.valor = value
-                resposta = (viewModel.valor * 1.8) + 32
+                resposta = round((viewModel.valor * 1.8) + 32)
             }
             else if InicialText == "Celsius" && FinalText == "Kelvin" {
                 viewModel.valor = value
-                resposta = viewModel.valor + 273
+                resposta = round(viewModel.valor + 273)
             }
             else if InicialText == "Celsius" && FinalText == "Celsius" {
                 resposta = value
@@ -47,27 +47,27 @@ class TemperaturaViewModel: TempViewModel {
         case "Fahrenheit":
             if InicialText == "Fahrenheit" && FinalText == "Celsius" {
                 viewModel.valor = value
-                resposta = (viewModel.valor - 32) + 1.8
+                resposta = round((viewModel.valor - 32) + 1.8)
             }
             else if InicialText == "Fahrenheit" && FinalText == "Fahrenheit" {
                 resposta = value
             }
             else if InicialText == "Fahrenheit" && FinalText == "Kelvin" {
                 viewModel.valor = value
-                resposta = (((viewModel.valor - 32) * 5)/9) + 273
+                resposta = round((((viewModel.valor - 32) * 5)/9) + 273)
             }
         
         case "Kelvin":
             if InicialText == "Kelvin" && FinalText == "Celsius" {
                 viewModel.valor = value
-                resposta = viewModel.valor - 273
+                resposta = round(viewModel.valor - 273)
             }
             else if InicialText == "Kelvin" && FinalText == "Kelvin" {
                 resposta = value
             }
             else if InicialText == "Kelvin" && FinalText == "Fahrenheit" {
                 viewModel.valor = value
-                resposta = ((viewModel.valor - 273) * 1.8) + 32
+                resposta = round(((viewModel.valor - 273) * 1.8) + 32)
             }
             
         default:
