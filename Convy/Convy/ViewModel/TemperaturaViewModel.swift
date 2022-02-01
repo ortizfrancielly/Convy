@@ -47,14 +47,14 @@ class TemperaturaViewModel: TempViewModel {
         case "Fahrenheit":
             if InicialText == "Fahrenheit" && FinalText == "Celsius" {
                 viewModel.valor = value
-                resposta = round((viewModel.valor - 32) + 1.8)
+                resposta = (viewModel.valor - 32) * (5/9)
             }
             else if InicialText == "Fahrenheit" && FinalText == "Fahrenheit" {
                 resposta = value
             }
             else if InicialText == "Fahrenheit" && FinalText == "Kelvin" {
                 viewModel.valor = value
-                resposta = round((((viewModel.valor - 32) * 5)/9) + 273)
+                resposta = round(((viewModel.valor - 32) * (5/9) + 273))
             }
         
         case "Kelvin":
