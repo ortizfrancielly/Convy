@@ -40,7 +40,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     
             var cellId = "cell"
             
-            var categories = ["Massa", "Temperatura", "Dados", "Comprimento"]
+            var categories = ["Massa Label".localized(), "Temperatura Label".localized(), "Dados Label".localized(), "Comprimento Label".localized()]
+            
+            var imagesCategories = ["Massa", "Temperatura", "Dados", "Comprimento"]
         
     
             private let baseInicialDelegate = BaseInicialDelegate()
@@ -70,7 +72,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 button.translatesAutoresizingMaskIntoConstraints = false
                 button.addTarget(self, action: #selector(calculateButton(_:)), for: .touchUpInside)
                 button.backgroundColor = .yellowButton
-                button.setTitle("Converter", for: UIControl.State.normal)
+                button.setTitle("Converter".localized(), for: UIControl.State.normal)
                 button.setTitleColor(.black, for: .normal)
                 button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
                 button.layer.cornerRadius = 14.0
@@ -117,7 +119,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 label.translatesAutoresizingMaskIntoConstraints = false
                 label.font = .preferredFont(forTextStyle: .headline)
                 label.adjustsFontForContentSizeCategory = true
-                label.text = "Resultado"
+                label.text = "Resultado".localized()
                 label.textColor = .black
                 return label
             }()
@@ -127,7 +129,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 label.translatesAutoresizingMaskIntoConstraints = false
                 label.font = .preferredFont(forTextStyle: .largeTitle)
                 label.adjustsFontForContentSizeCategory = true
-                label.text = "Categorias"
+                label.text = "Categorias".localized()
                 label.textColor = .black
                 return label
             }()
@@ -137,7 +139,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 label.translatesAutoresizingMaskIntoConstraints = false
                 label.font = .preferredFont(forTextStyle: .headline)
                 label.adjustsFontForContentSizeCategory = true
-                label.text = "Base Inicial"
+                label.text = "Base Inicial".localized()
                 label.textColor = .black
                 return label
             }()
@@ -149,7 +151,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 label.font = .preferredFont(forTextStyle: .headline)
                 label.adjustsFontForContentSizeCategory = true
                 label.textColor = .black
-                label.text = "Base Final"
+                label.text = "Base Final".localized()
                 return label
             }()
     
@@ -159,7 +161,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 label.translatesAutoresizingMaskIntoConstraints = false
                 label.font = .preferredFont(forTextStyle: .headline)
                 label.adjustsFontForContentSizeCategory = true
-                label.text = "Qual valor você quer converter?"
+                label.text = "Qual valor você quer converter?".localized()
                 label.textColor = .black
                 return label
             }()
@@ -178,7 +180,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 label.font = .preferredFont(forTextStyle: .largeTitle)
                 label.adjustsFontForContentSizeCategory = true
                 label.textColor = .black
-                label.text = "Conversão"
+                label.text = "Conversão".localized()
                 return label
             }()
             
@@ -306,7 +308,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             
             func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! cellCategories
-                let iconCategories = categories[indexPath.row]
+                let iconCategories = imagesCategories[indexPath.row]
                 cell.labelName.text = categories[indexPath.row]
                 cell.imageCell.image = UIImage(named: iconCategories)
                 cell.buttonTeste.tag = indexPath.item

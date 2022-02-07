@@ -1,0 +1,23 @@
+{
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "grid-size" : "large"
+  },
+  "stickers" : [
+    {
+      "filename" : "Image.sticker"
+    },
+    {
+      "filename" : "Image-1.sticker"
+    },
+    {
+      "filename" : "massa-sticker2.sticker"
+    },
+    {
+      "filename" : "temperatura-sticker.sticker"
+    }
+  ]
+}

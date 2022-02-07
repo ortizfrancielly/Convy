@@ -8,13 +8,13 @@
 import Foundation
 import UIKit
 
-let pickerDataComprimento: [String] = ["Escolha sua base", Comprimento.centimetro.unidadeMedida.nome, Comprimento.quilometro.unidadeMedida.nome, Comprimento.metro.unidadeMedida.nome]
+let pickerDataComprimento: [String] = ["Escolha sua base".localized(), Comprimento.centimetro.unidadeMedida.nome, Comprimento.quilometro.unidadeMedida.nome, Comprimento.metro.unidadeMedida.nome]
 
-let pickerDataMassa: [String] = ["Escolha sua base", Massa.miligrama.unidadeMedida.nome, Massa.grama.unidadeMedida.nome, Massa.quilograma.unidadeMedida.nome]
+let pickerDataMassa: [String] = ["Escolha sua base".localized(), Massa.miligrama.unidadeMedida.nome, Massa.grama.unidadeMedida.nome, Massa.quilograma.unidadeMedida.nome]
 
-let pickerDataDados: [String] = ["Escolha sua base", Dados.kilobyte.unidadeMedida.nome, Dados.megabyte.unidadeMedida.nome, Dados.gigabyte.unidadeMedida.nome]
+let pickerDataDados: [String] = ["Escolha sua base".localized(), Dados.kilobyte.unidadeMedida.nome, Dados.megabyte.unidadeMedida.nome, Dados.gigabyte.unidadeMedida.nome]
 
-let pickerDataTemperatura: [String] = ["Escolha sua base", Temperatura.kelvin.unidadeMedidaTemp.nome, Temperatura.celsius.unidadeMedidaTemp.nome, Temperatura.fahrenheit.unidadeMedidaTemp.nome]
+let pickerDataTemperatura: [String] = ["Escolha sua base".localized(), Temperatura.kelvin.unidadeMedidaTemp.nome, Temperatura.celsius.unidadeMedidaTemp.nome, Temperatura.fahrenheit.unidadeMedidaTemp.nome]
 
 internal class BaseInicialDelegate: NSObject, UIPickerViewDelegate {
     

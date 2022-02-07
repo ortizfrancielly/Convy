@@ -37,50 +37,50 @@ class ComprimentoViewModel: ConversionViewModel {
  
             switch (InicialText) {
                 
-            case "Centímetro":
-                if InicialText == "Centímetro" && FinalText == "Quilômetro" {
+            case "Centímetro".localized():
+                if InicialText == "Centímetro".localized() && FinalText == "Quilômetro".localized() {
                 viewModel.baseFinal = Comprimento.quilometro.unidadeMedida
                 viewModel.baseInicial = Comprimento.centimetro.unidadeMedida
                 viewModel.valor = value
                 resposta = viewModel.calcular()
                 }
-                else if InicialText == "Centímetro" && FinalText == "Metro" {
+                else if InicialText == "Centímetro".localized() && FinalText == "Metro".localized() {
                     viewModel.baseFinal = Comprimento.metro.unidadeMedida
                     viewModel.baseInicial = Comprimento.centimetro.unidadeMedida
                     viewModel.valor = value
                     resposta = viewModel.calcular()
                 }
-                else if InicialText == "Centímetro" && FinalText == "Centímetro" {
+                else if InicialText == "Centímetro".localized() && FinalText == "Centímetro".localized() {
                     resposta = value
                 }
-            case "Metro":
-                if InicialText == "Metro" && FinalText == "Centímetro" {
+            case "Metro".localized():
+                if InicialText == "Metro".localized() && FinalText == "Centímetro".localized() {
                     viewModel.baseFinal = Comprimento.centimetro.unidadeMedida
                     viewModel.baseInicial = Comprimento.metro.unidadeMedida
                     viewModel.valor = value
                     resposta = viewModel.calcular()
                 }
-                else if InicialText == "Metro" && FinalText == "Metro" {
+                else if InicialText == "Metro".localized() && FinalText == "Metro".localized() {
                     resposta = value
                 }
-                else if InicialText == "Metro" && FinalText == "Quilômetro" {
+                else if InicialText == "Metro".localized() && FinalText == "Quilômetro".localized() {
                     viewModel.baseFinal = Comprimento.quilometro.unidadeMedida
                     viewModel.baseInicial = Comprimento.metro.unidadeMedida
                     viewModel.valor = value
                     resposta = viewModel.calcular()
                 }
             
-            case "Quilômetro":
-                if InicialText == "Quilômetro" && FinalText == "Centímetro" {
+            case "Quilômetro".localized():
+                if InicialText == "Quilômetro".localized() && FinalText == "Centímetro".localized() {
                     viewModel.baseFinal = Comprimento.centimetro.unidadeMedida
                     viewModel.baseInicial = Comprimento.quilometro.unidadeMedida
                     viewModel.valor = value
                     resposta = viewModel.calcular()
                 }
-                else if InicialText == "Quilômetro" && FinalText == "Quilômetro" {
+                else if InicialText == "Quilômetro".localized() && FinalText == "Quilômetro".localized() {
                     resposta = value
                 }
-                else if InicialText == "Quilômetro" && FinalText == "Metro" {
+                else if InicialText == "Quilômetro".localized() && FinalText == "Metro".localized() {
                     viewModel.baseFinal = Comprimento.metro.unidadeMedida
                     viewModel.baseInicial = Comprimento.quilometro.unidadeMedida
                     viewModel.valor = value

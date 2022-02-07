@@ -15,11 +15,11 @@ enum Comprimento: CaseIterable {
     var unidadeMedida: UnidadeMedida {
         switch self {
         case .centimetro:
-            return UnidadeMedida(nome: "Centímetro", base: 0.01)
+            return UnidadeMedida(nome: "Centímetro".localized(), base: 0.01)
         case .metro:
-            return UnidadeMedida(nome: "Metro", base: 1)
+            return UnidadeMedida(nome: "Metro".localized(), base: 1)
         case .quilometro:
-           return UnidadeMedida(nome: "Quilômetro", base: 1000)
+            return UnidadeMedida(nome: "Quilômetro".localized(), base: 1000)
         }
     }
 }

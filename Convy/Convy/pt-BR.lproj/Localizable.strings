@@ -1,0 +1,22 @@
+"Categorias" = "Categorias";
+"Resultado" = "Resultado";
+"Massa Label" = "Massa";
+"Temperatura Label" = "Temperatura";
+"Comprimento Label" = "Comprimento";
+"Dados Label" = "Dados";
+"Escolha sua base" = "Escolha sua base";
+"Converter" = "Converter";
+"Qual valor você quer converter?" = "Qual valor você quer converter?";
+"Conversão" = "Conversão";
+"Base Inicial" = "Base Inicial";
+"Base Final" = "Base Final";
+
+//Conversão Temperatura
+"Centímetro" = "Centímetro";
+"Quilômetro" = "Quilômetro";
+"Metro" = "Metro";
+
+//Conversão Massa
+"Miligrama" = "Miligrama";
+"Quilograma" = "Quilograma";
+"Grama" = "Grama";

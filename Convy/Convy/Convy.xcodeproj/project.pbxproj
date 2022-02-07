@@ -31,7 +31,35 @@
 		1747D801279E0B2E00AC8ACE /* UnidadeMedidaTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D800279E0B2E00AC8ACE /* UnidadeMedidaTemp.swift */; };
 		1747D803279E0B7600AC8ACE /* TempProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D802279E0B7600AC8ACE /* TempProtocol.swift */; };
 		1747D805279E0BAF00AC8ACE /* TemperaturaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1747D804279E0BAF00AC8ACE /* TemperaturaViewModel.swift */; };
+		1796987C27ADC2F200AFF9BE /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1796987B27ADC2F200AFF9BE /* Stickers.xcassets */; };
+		1796988027ADC2F200AFF9BE /* Convy Sticker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1796987927ADC2ED00AFF9BE /* Convy Sticker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		17A77CA827B189FA00C4AD2F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17A77CAA27B189FA00C4AD2F /* Localizable.strings */; };
+		17A77CAF27B1941300C4AD2F /* LocalizableFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A77CAE27B1941300C4AD2F /* LocalizableFunction.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1796987E27ADC2F200AFF9BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1747D7B72793730400AC8ACE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1796987827ADC2ED00AFF9BE;
+			remoteInfo = "Convy Sticker";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1796988127ADC2F200AFF9BE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1796988027ADC2F200AFF9BE /* Convy Sticker.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1747D7BF2793730400AC8ACE /* Convy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Convy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +88,14 @@
 		1747D800279E0B2E00AC8ACE /* UnidadeMedidaTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnidadeMedidaTemp.swift; sourceTree = "<group>"; };
 		1747D802279E0B7600AC8ACE /* TempProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempProtocol.swift; sourceTree = "<group>"; };
 		1747D804279E0BAF00AC8ACE /* TemperaturaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperaturaViewModel.swift; sourceTree = "<group>"; };
+		1796987927ADC2ED00AFF9BE /* Convy Sticker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Convy Sticker.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1796987B27ADC2F200AFF9BE /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
+		1796987D27ADC2F200AFF9BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17A77CA927B189FA00C4AD2F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		17A77CAB27B190C500C4AD2F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
+		17A77CAC27B190C500C4AD2F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		17A77CAD27B190C500C4AD2F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		17A77CAE27B1941300C4AD2F /* LocalizableFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableFunction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +112,7 @@
 		1747D7B62793730400AC8ACE = {
 			isa = PBXGroup;
 			children = (
+				17A77CAA27B189FA00C4AD2F /* Localizable.strings */,
 				1747D7E92799C0DA00AC8ACE /* PickerView */,
 				1747D7E62798961900AC8ACE /* Struct */,
 				1747D7E3279895E300AC8ACE /* ViewModel */,
@@ -83,6 +120,7 @@
 				1747D7DD2798954B00AC8ACE /* Enum */,
 				1747D7D6279389B600AC8ACE /* Styles */,
 				1747D7C12793730400AC8ACE /* Convy */,
+				1796987A27ADC2ED00AFF9BE /* Convy Sticker */,
 				1747D7C02793730400AC8ACE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				1747D7BF2793730400AC8ACE /* Convy.app */,
+				1796987927ADC2ED00AFF9BE /* Convy Sticker.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +137,7 @@
 		1747D7C12793730400AC8ACE /* Convy */ = {
 			isa = PBXGroup;
 			children = (
+				17A77CAE27B1941300C4AD2F /* LocalizableFunction.swift */,
 				1747D7F42799EECD00AC8ACE /* UIColorExtension.swift */,
 				1747D7C22793730400AC8ACE /* AppDelegate.swift */,
 				1747D7C42793730400AC8ACE /* SceneDelegate.swift */,
@@ -185,6 +225,15 @@
 			path = "Base final";
 			sourceTree = "<group>";
 		};
+		1796987A27ADC2ED00AFF9BE /* Convy Sticker */ = {
+			isa = PBXGroup;
+			children = (
+				1796987B27ADC2F200AFF9BE /* Stickers.xcassets */,
+				1796987D27ADC2F200AFF9BE /* Info.plist */,
+			);
+			path = "Convy Sticker";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,15 +244,32 @@
 				1747D7BB2793730400AC8ACE /* Sources */,
 				1747D7BC2793730400AC8ACE /* Frameworks */,
 				1747D7BD2793730400AC8ACE /* Resources */,
+				1796988127ADC2F200AFF9BE /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1796987F27ADC2F200AFF9BE /* PBXTargetDependency */,
 			);
 			name = Convy;
 			productName = Convy;
 			productReference = 1747D7BF2793730400AC8ACE /* Convy.app */;
 			productType = "com.apple.product-type.application";
+		};
+		1796987827ADC2ED00AFF9BE /* Convy Sticker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1796988427ADC2F200AFF9BE /* Build configuration list for PBXNativeTarget "Convy Sticker" */;
+			buildPhases = (
+				1796987727ADC2ED00AFF9BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Convy Sticker";
+			productName = "Convy Sticker";
+			productReference = 1796987927ADC2ED00AFF9BE /* Convy Sticker.appex */;
+			productType = "com.apple.product-type.app-extension.messages-sticker-pack";
 		};
 /* End PBXNativeTarget section */
 
@@ -218,6 +284,9 @@
 					1747D7BE2793730400AC8ACE = {
 						CreatedOnToolsVersion = 13.0;
 					};
+					1796987827ADC2ED00AFF9BE = {
+						CreatedOnToolsVersion = 13.0;
+					};
 				};
 			};
 			buildConfigurationList = 1747D7BA2793730400AC8ACE /* Build configuration list for PBXProject "Convy" */;
@@ -227,6 +296,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 1747D7B62793730400AC8ACE;
 			productRefGroup = 1747D7C02793730400AC8ACE /* Products */;
@@ -234,6 +304,7 @@
 			projectRoot = "";
 			targets = (
 				1747D7BE2793730400AC8ACE /* Convy */,
+				1796987827ADC2ED00AFF9BE /* Convy Sticker */,
 			);
 		};
 /* End PBXProject section */
@@ -244,8 +315,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				1747D7CF2793730500AC8ACE /* LaunchScreen.storyboard in Resources */,
+				17A77CA827B189FA00C4AD2F /* Localizable.strings in Resources */,
 				1747D7CC2793730500AC8ACE /* Assets.xcassets in Resources */,
 				1747D7CA2793730400AC8ACE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1796987727ADC2ED00AFF9BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1796987C27ADC2F200AFF9BE /* Stickers.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +344,7 @@
 				1747D7EE2799C4A900AC8ACE /* BaseInicialDataSource.swift in Sources */,
 				1747D805279E0BAF00AC8ACE /* TemperaturaViewModel.swift in Sources */,
 				1747D7F32799C66D00AC8ACE /* BaseFinalDataSource.swift in Sources */,
+				17A77CAF27B1941300C4AD2F /* LocalizableFunction.swift in Sources */,
 				1747D7D8279389C900AC8ACE /* cellCategories.swift in Sources */,
 				1747D7F52799EECD00AC8ACE /* UIColorExtension.swift in Sources */,
 				1747D801279E0B2E00AC8ACE /* UnidadeMedidaTemp.swift in Sources */,
@@ -282,11 +363,20 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1796987F27ADC2F200AFF9BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1796987827ADC2ED00AFF9BE /* Convy Sticker */;
+			targetProxy = 1796987E27ADC2F200AFF9BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		1747D7C82793730400AC8ACE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1747D7C92793730400AC8ACE /* Base */,
+				17A77CAB27B190C500C4AD2F /* pt-BR */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -295,8 +385,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				1747D7CE2793730500AC8ACE /* Base */,
+				17A77CAC27B190C500C4AD2F /* pt-BR */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		17A77CAA27B189FA00C4AD2F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				17A77CA927B189FA00C4AD2F /* en */,
+				17A77CAD27B190C500C4AD2F /* pt-BR */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -306,6 +406,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -367,6 +468,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -424,7 +526,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = HPQ38SJ3W9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Convy/Info.plist;
@@ -438,7 +540,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = br.dev.ortiz.Convy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -453,7 +555,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = HPQ38SJ3W9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Convy/Info.plist;
@@ -467,12 +569,52 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = br.dev.ortiz.Convy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		1796988227ADC2F200AFF9BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = HPQ38SJ3W9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Convy Sticker/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Convy;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MARKETING_VERSION = 1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.dev.ortiz.Convy.Convy-Sticker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1796988327ADC2F200AFF9BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = HPQ38SJ3W9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Convy Sticker/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Convy;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MARKETING_VERSION = 1.4;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.dev.ortiz.Convy.Convy-Sticker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -493,6 +635,15 @@
 			buildConfigurations = (
 				1747D7D42793730500AC8ACE /* Debug */,
 				1747D7D52793730500AC8ACE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1796988427ADC2F200AFF9BE /* Build configuration list for PBXNativeTarget "Convy Sticker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1796988227ADC2F200AFF9BE /* Debug */,
+				1796988327ADC2F200AFF9BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,0 +1,24 @@
+"Categorias" = "Categories";
+"Resultado" = "Result";
+"Massa Label" = "Mass";
+"Temperatura Label" = "Temperature";
+"Comprimento Label" = "Lenght";
+"Dados Label" = "Data";
+"Escolha sua base" = "Choose your unity";
+"Converter" = "Convert";
+"Qual valor você quer converter?" = "Value to Convert";
+"Conversão" = "Converter";
+"Base Inicial" = "From";
+"Base Final" = "To";
+
+//Conversão Temperatura
+"Centímetro" = "Centimeters";
+"Quilômetro" = "Kilometers";
+"Metro" = "Meter";
+
+//Conversão Massa
+"Miligrama" = "Milligram";
+"Quilograma" = "Kilogram";
+"Grama" = "Gram";
+
+
